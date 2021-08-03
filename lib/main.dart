@@ -6,7 +6,6 @@ import 'package:socios_app/bloc/bloc/list_pedidos_bloc.dart';
 import 'package:socios_app/bloc/bloc/routes_bloc.dart';
 import 'package:socios_app/bloc/cubit/customer_key_cubit.dart';
 import 'package:socios_app/bloc/cubit/customerfilter_cubit.dart';
-import 'package:socios_app/bloc/home_bloc.dart';
 import 'package:socios_app/main_screen.dart';
 import 'package:socios_app/pages/customer/subpages/actualizar_datos.dart';
 import 'package:socios_app/pages/customer/subpages/datos_customer.dart';
