@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socios_app/bloc/bloc/customer_new_bloc.dart';
-import 'package:socios_app/bloc/bloc/home_new_bloc.dart';
-import 'package:socios_app/bloc/bloc/list_pedidos_bloc.dart';
-import 'package:socios_app/bloc/bloc/routes_bloc.dart';
-import 'package:socios_app/pages/customer/customer_page.dart';
-import 'package:socios_app/pages/customer/list_customer_local_page.dart';
+import 'package:socios_app/pages/customer/customer_local_list/bloc/customer_local_list_bloc.dart';
+
+import 'package:socios_app/pages/customer/customer_local_list/list_customer_local_page.dart';
+import 'package:socios_app/pages/home/bloc/daily_info_bloc.dart';
 import 'package:socios_app/pages/home/home_page.dart';
+import 'package:socios_app/pages/pedidos/bloc/pedidos_list_bloc.dart';
 import 'package:socios_app/pages/pedidos/pedidos_list_page.dart';
 import 'package:socios_app/utils/consts.dart';
 
+import 'pages/home/bloc/routes_bloc.dart';
 import 'utils/dialogs.dart';
  
 
@@ -88,9 +88,9 @@ class MainScreenState extends State<MainScreen> {
   void dispose() {
     super.dispose();
     _pageController.dispose();
-    BlocProvider.of<HomeNewBloc>(context).close();
-    BlocProvider.of<CustomerNewBloc>(context).close();
-    BlocProvider.of<ListPedidosBloc>(context).close();
+    BlocProvider.of<DailyInfoBloc>(context).close();
+    BlocProvider.of<CustomerLocalListBloc>(context).close();
+    BlocProvider.of<PedidosListBloc>(context).close();
     BlocProvider.of<RoutesBloc>(context).close();
   }
 

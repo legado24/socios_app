@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:socios_app/bloc/bloc/list_pedidos_bloc.dart';
+import 'package:socios_app/pages/pedidos/bloc/pedidos_list_bloc.dart';
+ 
 import 'package:socios_app/utils/colors.dart';
 import 'package:socios_app/utils/dimens.dart';
 import 'package:socios_app/widgets/appbar_socios.dart';
@@ -61,7 +62,7 @@ class PedidosListPage extends StatelessWidget {
                               .then((value) {
                             txtController.text =
                                 '${value!.day.toString().padLeft(2, '0')}-${value.month.toString().padLeft(2, '0')}-${value.year.toString()}';
-                                context.read<ListPedidosBloc>().add(ListPedidosEvent.callListPedidos("DIAZPJOS",  txtController.text));
+                                context.read<PedidosListBloc>().add(PedidosListEvent.callListPedidos("DIAZPJOS",  txtController.text));
                           });
                         },
                         child: TextField(
@@ -97,13 +98,13 @@ class PedidosListPage extends StatelessWidget {
   }
 
   Widget getWidgetList(_) {
-    return BlocListener<ListPedidosBloc, ListPedidosState>(
+    return BlocListener<PedidosListBloc, PedidosListState>(
         listener: (_, state) {
           print("state changed  ${state} ");
         },
-        child: BlocBuilder<ListPedidosBloc, ListPedidosState>(
-            bloc: BlocProvider.of<ListPedidosBloc>(_)
-              ..add(ListPedidosEvent.callListPedidos(
+        child: BlocBuilder<PedidosListBloc, PedidosListState>(
+            bloc: BlocProvider.of<PedidosListBloc>(_)
+              ..add(PedidosListEvent.callListPedidos(
                   "DIAZPJOS", txtController.text)),
             builder: (context, state) {
               return state.when(

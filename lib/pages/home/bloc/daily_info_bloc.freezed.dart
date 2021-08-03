@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'list_pedidos_bloc.dart';
+part of 'daily_info_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,164 +13,76 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ListPedidosEventTearOff {
-  const _$ListPedidosEventTearOff();
-
-  _Started started() {
-    return const _Started();
-  }
+class _$DailyInfoEventTearOff {
+  const _$DailyInfoEventTearOff();
 
   _Loading loading() {
     return const _Loading();
   }
 
-  _CallListPedidos callListPedidos(dynamic user, dynamic fecha) {
-    return _CallListPedidos(
+  _CallInfoDiaria callInfoDiaria(dynamic user) {
+    return _CallInfoDiaria(
       user,
-      fecha,
     );
   }
+
+  _ReInit reInit() {
+    return const _ReInit();
+  }
 }
 
 /// @nodoc
-const $ListPedidosEvent = _$ListPedidosEventTearOff();
+const $DailyInfoEvent = _$DailyInfoEventTearOff();
 
 /// @nodoc
-mixin _$ListPedidosEvent {
+mixin _$DailyInfoEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(dynamic user) callInfoDiaria,
+    required TResult Function() reInit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(dynamic user)? callInfoDiaria,
+    TResult Function()? reInit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_CallListPedidos value) callListPedidos,
+    required TResult Function(_CallInfoDiaria value) callInfoDiaria,
+    required TResult Function(_ReInit value) reInit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Loading value)? loading,
-    TResult Function(_CallListPedidos value)? callListPedidos,
+    TResult Function(_CallInfoDiaria value)? callInfoDiaria,
+    TResult Function(_ReInit value)? reInit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListPedidosEventCopyWith<$Res> {
-  factory $ListPedidosEventCopyWith(
-          ListPedidosEvent value, $Res Function(ListPedidosEvent) then) =
-      _$ListPedidosEventCopyWithImpl<$Res>;
+abstract class $DailyInfoEventCopyWith<$Res> {
+  factory $DailyInfoEventCopyWith(
+          DailyInfoEvent value, $Res Function(DailyInfoEvent) then) =
+      _$DailyInfoEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ListPedidosEventCopyWithImpl<$Res>
-    implements $ListPedidosEventCopyWith<$Res> {
-  _$ListPedidosEventCopyWithImpl(this._value, this._then);
+class _$DailyInfoEventCopyWithImpl<$Res>
+    implements $DailyInfoEventCopyWith<$Res> {
+  _$DailyInfoEventCopyWithImpl(this._value, this._then);
 
-  final ListPedidosEvent _value;
+  final DailyInfoEvent _value;
   // ignore: unused_field
-  final $Res Function(ListPedidosEvent) _then;
-}
-
-/// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$ListPedidosEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
-
-  @override
-  _Started get _value => super._value as _Started;
-}
-
-/// @nodoc
-
-class _$_Started implements _Started {
-  const _$_Started();
-
-  @override
-  String toString() {
-    return 'ListPedidosEvent.started()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CallListPedidos value) callListPedidos,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CallListPedidos value)? callListPedidos,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements ListPedidosEvent {
-  const factory _Started() = _$_Started;
+  final $Res Function(DailyInfoEvent) _then;
 }
 
 /// @nodoc
@@ -180,7 +92,7 @@ abstract class _$LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$ListPedidosEventCopyWithImpl<$Res>
+class __$LoadingCopyWithImpl<$Res> extends _$DailyInfoEventCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
       : super(_value, (v) => _then(v as _Loading));
@@ -196,7 +108,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'ListPedidosEvent.loading()';
+    return 'DailyInfoEvent.loading()';
   }
 
   @override
@@ -210,9 +122,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(dynamic user) callInfoDiaria,
+    required TResult Function() reInit,
   }) {
     return loading();
   }
@@ -220,9 +132,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(dynamic user)? callInfoDiaria,
+    TResult Function()? reInit,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -234,9 +146,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_CallListPedidos value) callListPedidos,
+    required TResult Function(_CallInfoDiaria value) callInfoDiaria,
+    required TResult Function(_ReInit value) reInit,
   }) {
     return loading(this);
   }
@@ -244,9 +156,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Loading value)? loading,
-    TResult Function(_CallListPedidos value)? callListPedidos,
+    TResult Function(_CallInfoDiaria value)? callInfoDiaria,
+    TResult Function(_ReInit value)? reInit,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -256,97 +168,89 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements ListPedidosEvent {
+abstract class _Loading implements DailyInfoEvent {
   const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
-abstract class _$CallListPedidosCopyWith<$Res> {
-  factory _$CallListPedidosCopyWith(
-          _CallListPedidos value, $Res Function(_CallListPedidos) then) =
-      __$CallListPedidosCopyWithImpl<$Res>;
-  $Res call({dynamic user, dynamic fecha});
+abstract class _$CallInfoDiariaCopyWith<$Res> {
+  factory _$CallInfoDiariaCopyWith(
+          _CallInfoDiaria value, $Res Function(_CallInfoDiaria) then) =
+      __$CallInfoDiariaCopyWithImpl<$Res>;
+  $Res call({dynamic user});
 }
 
 /// @nodoc
-class __$CallListPedidosCopyWithImpl<$Res>
-    extends _$ListPedidosEventCopyWithImpl<$Res>
-    implements _$CallListPedidosCopyWith<$Res> {
-  __$CallListPedidosCopyWithImpl(
-      _CallListPedidos _value, $Res Function(_CallListPedidos) _then)
-      : super(_value, (v) => _then(v as _CallListPedidos));
+class __$CallInfoDiariaCopyWithImpl<$Res>
+    extends _$DailyInfoEventCopyWithImpl<$Res>
+    implements _$CallInfoDiariaCopyWith<$Res> {
+  __$CallInfoDiariaCopyWithImpl(
+      _CallInfoDiaria _value, $Res Function(_CallInfoDiaria) _then)
+      : super(_value, (v) => _then(v as _CallInfoDiaria));
 
   @override
-  _CallListPedidos get _value => super._value as _CallListPedidos;
+  _CallInfoDiaria get _value => super._value as _CallInfoDiaria;
 
   @override
   $Res call({
     Object? user = freezed,
-    Object? fecha = freezed,
   }) {
-    return _then(_CallListPedidos(
+    return _then(_CallInfoDiaria(
       user == freezed ? _value.user : user,
-      fecha == freezed ? _value.fecha : fecha,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_CallListPedidos implements _CallListPedidos {
-  const _$_CallListPedidos(this.user, this.fecha);
+class _$_CallInfoDiaria implements _CallInfoDiaria {
+  const _$_CallInfoDiaria(this.user);
 
   @override
   final dynamic user;
-  @override
-  final dynamic fecha;
 
   @override
   String toString() {
-    return 'ListPedidosEvent.callListPedidos(user: $user, fecha: $fecha)';
+    return 'DailyInfoEvent.callInfoDiaria(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CallListPedidos &&
+        (other is _CallInfoDiaria &&
             (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.fecha, fecha) ||
-                const DeepCollectionEquality().equals(other.fecha, fecha)));
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(fecha);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$CallListPedidosCopyWith<_CallListPedidos> get copyWith =>
-      __$CallListPedidosCopyWithImpl<_CallListPedidos>(this, _$identity);
+  _$CallInfoDiariaCopyWith<_CallInfoDiaria> get copyWith =>
+      __$CallInfoDiariaCopyWithImpl<_CallInfoDiaria>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(dynamic user) callInfoDiaria,
+    required TResult Function() reInit,
   }) {
-    return callListPedidos(user, fecha);
+    return callInfoDiaria(user);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(dynamic user)? callInfoDiaria,
+    TResult Function()? reInit,
     required TResult orElse(),
   }) {
-    if (callListPedidos != null) {
-      return callListPedidos(user, fecha);
+    if (callInfoDiaria != null) {
+      return callInfoDiaria(user);
     }
     return orElse();
   }
@@ -354,42 +258,127 @@ class _$_CallListPedidos implements _CallListPedidos {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_CallListPedidos value) callListPedidos,
+    required TResult Function(_CallInfoDiaria value) callInfoDiaria,
+    required TResult Function(_ReInit value) reInit,
   }) {
-    return callListPedidos(this);
+    return callInfoDiaria(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Loading value)? loading,
-    TResult Function(_CallListPedidos value)? callListPedidos,
+    TResult Function(_CallInfoDiaria value)? callInfoDiaria,
+    TResult Function(_ReInit value)? reInit,
     required TResult orElse(),
   }) {
-    if (callListPedidos != null) {
-      return callListPedidos(this);
+    if (callInfoDiaria != null) {
+      return callInfoDiaria(this);
     }
     return orElse();
   }
 }
 
-abstract class _CallListPedidos implements ListPedidosEvent {
-  const factory _CallListPedidos(dynamic user, dynamic fecha) =
-      _$_CallListPedidos;
+abstract class _CallInfoDiaria implements DailyInfoEvent {
+  const factory _CallInfoDiaria(dynamic user) = _$_CallInfoDiaria;
 
   dynamic get user => throw _privateConstructorUsedError;
-  dynamic get fecha => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$CallListPedidosCopyWith<_CallListPedidos> get copyWith =>
+  _$CallInfoDiariaCopyWith<_CallInfoDiaria> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$ListPedidosStateTearOff {
-  const _$ListPedidosStateTearOff();
+abstract class _$ReInitCopyWith<$Res> {
+  factory _$ReInitCopyWith(_ReInit value, $Res Function(_ReInit) then) =
+      __$ReInitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ReInitCopyWithImpl<$Res> extends _$DailyInfoEventCopyWithImpl<$Res>
+    implements _$ReInitCopyWith<$Res> {
+  __$ReInitCopyWithImpl(_ReInit _value, $Res Function(_ReInit) _then)
+      : super(_value, (v) => _then(v as _ReInit));
+
+  @override
+  _ReInit get _value => super._value as _ReInit;
+}
+
+/// @nodoc
+
+class _$_ReInit implements _ReInit {
+  const _$_ReInit();
+
+  @override
+  String toString() {
+    return 'DailyInfoEvent.reInit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ReInit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(dynamic user) callInfoDiaria,
+    required TResult Function() reInit,
+  }) {
+    return reInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(dynamic user)? callInfoDiaria,
+    TResult Function()? reInit,
+    required TResult orElse(),
+  }) {
+    if (reInit != null) {
+      return reInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_CallInfoDiaria value) callInfoDiaria,
+    required TResult Function(_ReInit value) reInit,
+  }) {
+    return reInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_CallInfoDiaria value)? callInfoDiaria,
+    TResult Function(_ReInit value)? reInit,
+    required TResult orElse(),
+  }) {
+    if (reInit != null) {
+      return reInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReInit implements DailyInfoEvent {
+  const factory _ReInit() = _$_ReInit;
+}
+
+/// @nodoc
+class _$DailyInfoStateTearOff {
+  const _$DailyInfoStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -399,9 +388,9 @@ class _$ListPedidosStateTearOff {
     return const _ShowProgress();
   }
 
-  _Data data(List<Pedido> pedidos) {
+  _Data data(InfoVentaDiariaResponse? infoVentaDiariaResponse) {
     return _Data(
-      pedidos,
+      infoVentaDiariaResponse,
     );
   }
 
@@ -411,15 +400,16 @@ class _$ListPedidosStateTearOff {
 }
 
 /// @nodoc
-const $ListPedidosState = _$ListPedidosStateTearOff();
+const $DailyInfoState = _$DailyInfoStateTearOff();
 
 /// @nodoc
-mixin _$ListPedidosState {
+mixin _$DailyInfoState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showProgress,
-    required TResult Function(List<Pedido> pedidos) data,
+    required TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)
+        data,
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -427,7 +417,7 @@ mixin _$ListPedidosState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showProgress,
-    TResult Function(List<Pedido> pedidos)? data,
+    TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)? data,
     TResult Function()? failure,
     required TResult orElse(),
   }) =>
@@ -452,20 +442,20 @@ mixin _$ListPedidosState {
 }
 
 /// @nodoc
-abstract class $ListPedidosStateCopyWith<$Res> {
-  factory $ListPedidosStateCopyWith(
-          ListPedidosState value, $Res Function(ListPedidosState) then) =
-      _$ListPedidosStateCopyWithImpl<$Res>;
+abstract class $DailyInfoStateCopyWith<$Res> {
+  factory $DailyInfoStateCopyWith(
+          DailyInfoState value, $Res Function(DailyInfoState) then) =
+      _$DailyInfoStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ListPedidosStateCopyWithImpl<$Res>
-    implements $ListPedidosStateCopyWith<$Res> {
-  _$ListPedidosStateCopyWithImpl(this._value, this._then);
+class _$DailyInfoStateCopyWithImpl<$Res>
+    implements $DailyInfoStateCopyWith<$Res> {
+  _$DailyInfoStateCopyWithImpl(this._value, this._then);
 
-  final ListPedidosState _value;
+  final DailyInfoState _value;
   // ignore: unused_field
-  final $Res Function(ListPedidosState) _then;
+  final $Res Function(DailyInfoState) _then;
 }
 
 /// @nodoc
@@ -475,7 +465,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ListPedidosStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$DailyInfoStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -491,7 +481,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ListPedidosState.initial()';
+    return 'DailyInfoState.initial()';
   }
 
   @override
@@ -507,7 +497,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showProgress,
-    required TResult Function(List<Pedido> pedidos) data,
+    required TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)
+        data,
     required TResult Function() failure,
   }) {
     return initial();
@@ -518,7 +509,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showProgress,
-    TResult Function(List<Pedido> pedidos)? data,
+    TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)? data,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -555,7 +546,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ListPedidosState {
+abstract class _Initial implements DailyInfoState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -568,7 +559,7 @@ abstract class _$ShowProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$ShowProgressCopyWithImpl<$Res>
-    extends _$ListPedidosStateCopyWithImpl<$Res>
+    extends _$DailyInfoStateCopyWithImpl<$Res>
     implements _$ShowProgressCopyWith<$Res> {
   __$ShowProgressCopyWithImpl(
       _ShowProgress _value, $Res Function(_ShowProgress) _then)
@@ -585,7 +576,7 @@ class _$_ShowProgress implements _ShowProgress {
 
   @override
   String toString() {
-    return 'ListPedidosState.showProgress()';
+    return 'DailyInfoState.showProgress()';
   }
 
   @override
@@ -601,7 +592,8 @@ class _$_ShowProgress implements _ShowProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showProgress,
-    required TResult Function(List<Pedido> pedidos) data,
+    required TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)
+        data,
     required TResult Function() failure,
   }) {
     return showProgress();
@@ -612,7 +604,7 @@ class _$_ShowProgress implements _ShowProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showProgress,
-    TResult Function(List<Pedido> pedidos)? data,
+    TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)? data,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -649,7 +641,7 @@ class _$_ShowProgress implements _ShowProgress {
   }
 }
 
-abstract class _ShowProgress implements ListPedidosState {
+abstract class _ShowProgress implements DailyInfoState {
   const factory _ShowProgress() = _$_ShowProgress;
 }
 
@@ -657,11 +649,11 @@ abstract class _ShowProgress implements ListPedidosState {
 abstract class _$DataCopyWith<$Res> {
   factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
       __$DataCopyWithImpl<$Res>;
-  $Res call({List<Pedido> pedidos});
+  $Res call({InfoVentaDiariaResponse? infoVentaDiariaResponse});
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$ListPedidosStateCopyWithImpl<$Res>
+class __$DataCopyWithImpl<$Res> extends _$DailyInfoStateCopyWithImpl<$Res>
     implements _$DataCopyWith<$Res> {
   __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
       : super(_value, (v) => _then(v as _Data));
@@ -671,13 +663,13 @@ class __$DataCopyWithImpl<$Res> extends _$ListPedidosStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? pedidos = freezed,
+    Object? infoVentaDiariaResponse = freezed,
   }) {
     return _then(_Data(
-      pedidos == freezed
-          ? _value.pedidos
-          : pedidos // ignore: cast_nullable_to_non_nullable
-              as List<Pedido>,
+      infoVentaDiariaResponse == freezed
+          ? _value.infoVentaDiariaResponse
+          : infoVentaDiariaResponse // ignore: cast_nullable_to_non_nullable
+              as InfoVentaDiariaResponse?,
     ));
   }
 }
@@ -685,27 +677,30 @@ class __$DataCopyWithImpl<$Res> extends _$ListPedidosStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Data implements _Data {
-  const _$_Data(this.pedidos);
+  const _$_Data(this.infoVentaDiariaResponse);
 
   @override
-  final List<Pedido> pedidos;
+  final InfoVentaDiariaResponse? infoVentaDiariaResponse;
 
   @override
   String toString() {
-    return 'ListPedidosState.data(pedidos: $pedidos)';
+    return 'DailyInfoState.data(infoVentaDiariaResponse: $infoVentaDiariaResponse)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Data &&
-            (identical(other.pedidos, pedidos) ||
-                const DeepCollectionEquality().equals(other.pedidos, pedidos)));
+            (identical(
+                    other.infoVentaDiariaResponse, infoVentaDiariaResponse) ||
+                const DeepCollectionEquality().equals(
+                    other.infoVentaDiariaResponse, infoVentaDiariaResponse)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(pedidos);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(infoVentaDiariaResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -717,10 +712,11 @@ class _$_Data implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showProgress,
-    required TResult Function(List<Pedido> pedidos) data,
+    required TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)
+        data,
     required TResult Function() failure,
   }) {
-    return data(pedidos);
+    return data(infoVentaDiariaResponse);
   }
 
   @override
@@ -728,12 +724,12 @@ class _$_Data implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showProgress,
-    TResult Function(List<Pedido> pedidos)? data,
+    TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)? data,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(pedidos);
+      return data(infoVentaDiariaResponse);
     }
     return orElse();
   }
@@ -765,10 +761,12 @@ class _$_Data implements _Data {
   }
 }
 
-abstract class _Data implements ListPedidosState {
-  const factory _Data(List<Pedido> pedidos) = _$_Data;
+abstract class _Data implements DailyInfoState {
+  const factory _Data(InfoVentaDiariaResponse? infoVentaDiariaResponse) =
+      _$_Data;
 
-  List<Pedido> get pedidos => throw _privateConstructorUsedError;
+  InfoVentaDiariaResponse? get infoVentaDiariaResponse =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
 }
@@ -780,7 +778,7 @@ abstract class _$FailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$ListPedidosStateCopyWithImpl<$Res>
+class __$FailureCopyWithImpl<$Res> extends _$DailyInfoStateCopyWithImpl<$Res>
     implements _$FailureCopyWith<$Res> {
   __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
       : super(_value, (v) => _then(v as _Failure));
@@ -796,7 +794,7 @@ class _$_Failure implements _Failure {
 
   @override
   String toString() {
-    return 'ListPedidosState.failure()';
+    return 'DailyInfoState.failure()';
   }
 
   @override
@@ -812,7 +810,8 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showProgress,
-    required TResult Function(List<Pedido> pedidos) data,
+    required TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)
+        data,
     required TResult Function() failure,
   }) {
     return failure();
@@ -823,7 +822,7 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showProgress,
-    TResult Function(List<Pedido> pedidos)? data,
+    TResult Function(InfoVentaDiariaResponse? infoVentaDiariaResponse)? data,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -860,6 +859,6 @@ class _$_Failure implements _Failure {
   }
 }
 
-abstract class _Failure implements ListPedidosState {
+abstract class _Failure implements DailyInfoState {
   const factory _Failure() = _$_Failure;
 }

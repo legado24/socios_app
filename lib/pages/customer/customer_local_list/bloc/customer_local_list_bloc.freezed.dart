@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'customer_new_bloc.dart';
+part of 'customer_local_list_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$CustomerNewEventTearOff {
-  const _$CustomerNewEventTearOff();
+class _$CustomerLocalListEventTearOff {
+  const _$CustomerLocalListEventTearOff();
 
   _Loading loading() {
     return const _Loading();
@@ -70,10 +70,10 @@ class _$CustomerNewEventTearOff {
 }
 
 /// @nodoc
-const $CustomerNewEvent = _$CustomerNewEventTearOff();
+const $CustomerLocalListEvent = _$CustomerLocalListEventTearOff();
 
 /// @nodoc
-mixin _$CustomerNewEvent {
+mixin _$CustomerLocalListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -141,20 +141,20 @@ mixin _$CustomerNewEvent {
 }
 
 /// @nodoc
-abstract class $CustomerNewEventCopyWith<$Res> {
-  factory $CustomerNewEventCopyWith(
-          CustomerNewEvent value, $Res Function(CustomerNewEvent) then) =
-      _$CustomerNewEventCopyWithImpl<$Res>;
+abstract class $CustomerLocalListEventCopyWith<$Res> {
+  factory $CustomerLocalListEventCopyWith(CustomerLocalListEvent value,
+          $Res Function(CustomerLocalListEvent) then) =
+      _$CustomerLocalListEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CustomerNewEventCopyWithImpl<$Res>
-    implements $CustomerNewEventCopyWith<$Res> {
-  _$CustomerNewEventCopyWithImpl(this._value, this._then);
+class _$CustomerLocalListEventCopyWithImpl<$Res>
+    implements $CustomerLocalListEventCopyWith<$Res> {
+  _$CustomerLocalListEventCopyWithImpl(this._value, this._then);
 
-  final CustomerNewEvent _value;
+  final CustomerLocalListEvent _value;
   // ignore: unused_field
-  final $Res Function(CustomerNewEvent) _then;
+  final $Res Function(CustomerLocalListEvent) _then;
 }
 
 /// @nodoc
@@ -164,7 +164,8 @@ abstract class _$LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$CustomerNewEventCopyWithImpl<$Res>
+class __$LoadingCopyWithImpl<$Res>
+    extends _$CustomerLocalListEventCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
       : super(_value, (v) => _then(v as _Loading));
@@ -175,18 +176,12 @@ class __$LoadingCopyWithImpl<$Res> extends _$CustomerNewEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loading with DiagnosticableTreeMixin implements _Loading {
+class _$_Loading implements _Loading {
   const _$_Loading();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewEvent.loading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CustomerNewEvent.loading'));
+  String toString() {
+    return 'CustomerLocalListEvent.loading()';
   }
 
   @override
@@ -280,7 +275,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   }
 }
 
-abstract class _Loading implements CustomerNewEvent {
+abstract class _Loading implements CustomerLocalListEvent {
   const factory _Loading() = _$_Loading;
 }
 
@@ -294,7 +289,7 @@ abstract class _$CallListCustomerCopyWith<$Res> {
 
 /// @nodoc
 class __$CallListCustomerCopyWithImpl<$Res>
-    extends _$CustomerNewEventCopyWithImpl<$Res>
+    extends _$CustomerLocalListEventCopyWithImpl<$Res>
     implements _$CallListCustomerCopyWith<$Res> {
   __$CallListCustomerCopyWithImpl(
       _CallListCustomer _value, $Res Function(_CallListCustomer) _then)
@@ -321,9 +316,7 @@ class __$CallListCustomerCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CallListCustomer
-    with DiagnosticableTreeMixin
-    implements _CallListCustomer {
+class _$_CallListCustomer implements _CallListCustomer {
   const _$_CallListCustomer(this.user, this.tipoFiltro, this.filtro,
       [this.page = 0]);
 
@@ -338,19 +331,8 @@ class _$_CallListCustomer
   final dynamic page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewEvent.callListCustomer(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerNewEvent.callListCustomer'))
-      ..add(DiagnosticsProperty('user', user))
-      ..add(DiagnosticsProperty('tipoFiltro', tipoFiltro))
-      ..add(DiagnosticsProperty('filtro', filtro))
-      ..add(DiagnosticsProperty('page', page));
+  String toString() {
+    return 'CustomerLocalListEvent.callListCustomer(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
   }
 
   @override
@@ -464,7 +446,7 @@ class _$_CallListCustomer
   }
 }
 
-abstract class _CallListCustomer implements CustomerNewEvent {
+abstract class _CallListCustomer implements CustomerLocalListEvent {
   const factory _CallListCustomer(
           dynamic user, dynamic tipoFiltro, dynamic filtro, [dynamic page]) =
       _$_CallListCustomer;
@@ -488,7 +470,7 @@ abstract class _$CallListCustomerSearchKeyCopyWith<$Res> {
 
 /// @nodoc
 class __$CallListCustomerSearchKeyCopyWithImpl<$Res>
-    extends _$CustomerNewEventCopyWithImpl<$Res>
+    extends _$CustomerLocalListEventCopyWithImpl<$Res>
     implements _$CallListCustomerSearchKeyCopyWith<$Res> {
   __$CallListCustomerSearchKeyCopyWithImpl(_CallListCustomerSearchKey _value,
       $Res Function(_CallListCustomerSearchKey) _then)
@@ -516,9 +498,7 @@ class __$CallListCustomerSearchKeyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CallListCustomerSearchKey
-    with DiagnosticableTreeMixin
-    implements _CallListCustomerSearchKey {
+class _$_CallListCustomerSearchKey implements _CallListCustomerSearchKey {
   const _$_CallListCustomerSearchKey(this.user, this.tipoFiltro, this.filtro,
       [this.page = 0]);
 
@@ -533,20 +513,8 @@ class _$_CallListCustomerSearchKey
   final dynamic page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewEvent.callListCustomerSearchKey(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomerNewEvent.callListCustomerSearchKey'))
-      ..add(DiagnosticsProperty('user', user))
-      ..add(DiagnosticsProperty('tipoFiltro', tipoFiltro))
-      ..add(DiagnosticsProperty('filtro', filtro))
-      ..add(DiagnosticsProperty('page', page));
+  String toString() {
+    return 'CustomerLocalListEvent.callListCustomerSearchKey(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
   }
 
   @override
@@ -662,7 +630,7 @@ class _$_CallListCustomerSearchKey
   }
 }
 
-abstract class _CallListCustomerSearchKey implements CustomerNewEvent {
+abstract class _CallListCustomerSearchKey implements CustomerLocalListEvent {
   const factory _CallListCustomerSearchKey(
           dynamic user, dynamic tipoFiltro, dynamic filtro, [dynamic page]) =
       _$_CallListCustomerSearchKey;
@@ -687,7 +655,7 @@ abstract class _$CallListCustomerSearchButtonCopyWith<$Res> {
 
 /// @nodoc
 class __$CallListCustomerSearchButtonCopyWithImpl<$Res>
-    extends _$CustomerNewEventCopyWithImpl<$Res>
+    extends _$CustomerLocalListEventCopyWithImpl<$Res>
     implements _$CallListCustomerSearchButtonCopyWith<$Res> {
   __$CallListCustomerSearchButtonCopyWithImpl(
       _CallListCustomerSearchButton _value,
@@ -716,9 +684,7 @@ class __$CallListCustomerSearchButtonCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CallListCustomerSearchButton
-    with DiagnosticableTreeMixin
-    implements _CallListCustomerSearchButton {
+class _$_CallListCustomerSearchButton implements _CallListCustomerSearchButton {
   const _$_CallListCustomerSearchButton(this.user, this.tipoFiltro, this.filtro,
       [this.page = 0]);
 
@@ -733,20 +699,8 @@ class _$_CallListCustomerSearchButton
   final dynamic page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewEvent.callListCustomerSearchButton(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomerNewEvent.callListCustomerSearchButton'))
-      ..add(DiagnosticsProperty('user', user))
-      ..add(DiagnosticsProperty('tipoFiltro', tipoFiltro))
-      ..add(DiagnosticsProperty('filtro', filtro))
-      ..add(DiagnosticsProperty('page', page));
+  String toString() {
+    return 'CustomerLocalListEvent.callListCustomerSearchButton(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
   }
 
   @override
@@ -861,7 +815,7 @@ class _$_CallListCustomerSearchButton
   }
 }
 
-abstract class _CallListCustomerSearchButton implements CustomerNewEvent {
+abstract class _CallListCustomerSearchButton implements CustomerLocalListEvent {
   const factory _CallListCustomerSearchButton(
           dynamic user, dynamic tipoFiltro, dynamic filtro, [dynamic page]) =
       _$_CallListCustomerSearchButton;
@@ -886,7 +840,7 @@ abstract class _$CallListCustomerFilterSelectedCopyWith<$Res> {
 
 /// @nodoc
 class __$CallListCustomerFilterSelectedCopyWithImpl<$Res>
-    extends _$CustomerNewEventCopyWithImpl<$Res>
+    extends _$CustomerLocalListEventCopyWithImpl<$Res>
     implements _$CallListCustomerFilterSelectedCopyWith<$Res> {
   __$CallListCustomerFilterSelectedCopyWithImpl(
       _CallListCustomerFilterSelected _value,
@@ -916,7 +870,6 @@ class __$CallListCustomerFilterSelectedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CallListCustomerFilterSelected
-    with DiagnosticableTreeMixin
     implements _CallListCustomerFilterSelected {
   const _$_CallListCustomerFilterSelected(
       this.user, this.tipoFiltro, this.filtro,
@@ -933,20 +886,8 @@ class _$_CallListCustomerFilterSelected
   final dynamic page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewEvent.callListCustomerFilterSelected(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomerNewEvent.callListCustomerFilterSelected'))
-      ..add(DiagnosticsProperty('user', user))
-      ..add(DiagnosticsProperty('tipoFiltro', tipoFiltro))
-      ..add(DiagnosticsProperty('filtro', filtro))
-      ..add(DiagnosticsProperty('page', page));
+  String toString() {
+    return 'CustomerLocalListEvent.callListCustomerFilterSelected(user: $user, tipoFiltro: $tipoFiltro, filtro: $filtro, page: $page)';
   }
 
   @override
@@ -1061,7 +1002,8 @@ class _$_CallListCustomerFilterSelected
   }
 }
 
-abstract class _CallListCustomerFilterSelected implements CustomerNewEvent {
+abstract class _CallListCustomerFilterSelected
+    implements CustomerLocalListEvent {
   const factory _CallListCustomerFilterSelected(
           dynamic user, dynamic tipoFiltro, dynamic filtro, [dynamic page]) =
       _$_CallListCustomerFilterSelected;
@@ -1082,7 +1024,8 @@ abstract class _$ReInitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ReInitCopyWithImpl<$Res> extends _$CustomerNewEventCopyWithImpl<$Res>
+class __$ReInitCopyWithImpl<$Res>
+    extends _$CustomerLocalListEventCopyWithImpl<$Res>
     implements _$ReInitCopyWith<$Res> {
   __$ReInitCopyWithImpl(_ReInit _value, $Res Function(_ReInit) _then)
       : super(_value, (v) => _then(v as _ReInit));
@@ -1093,18 +1036,12 @@ class __$ReInitCopyWithImpl<$Res> extends _$CustomerNewEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReInit with DiagnosticableTreeMixin implements _ReInit {
+class _$_ReInit implements _ReInit {
   const _$_ReInit();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewEvent.reInit()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CustomerNewEvent.reInit'));
+  String toString() {
+    return 'CustomerLocalListEvent.reInit()';
   }
 
   @override
@@ -1198,13 +1135,13 @@ class _$_ReInit with DiagnosticableTreeMixin implements _ReInit {
   }
 }
 
-abstract class _ReInit implements CustomerNewEvent {
+abstract class _ReInit implements CustomerLocalListEvent {
   const factory _ReInit() = _$_ReInit;
 }
 
 /// @nodoc
-class _$CustomerNewStateTearOff {
-  const _$CustomerNewStateTearOff();
+class _$CustomerLocalListStateTearOff {
+  const _$CustomerLocalListStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -1230,10 +1167,10 @@ class _$CustomerNewStateTearOff {
 }
 
 /// @nodoc
-const $CustomerNewState = _$CustomerNewStateTearOff();
+const $CustomerLocalListState = _$CustomerLocalListStateTearOff();
 
 /// @nodoc
-mixin _$CustomerNewState {
+mixin _$CustomerLocalListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -1275,20 +1212,20 @@ mixin _$CustomerNewState {
 }
 
 /// @nodoc
-abstract class $CustomerNewStateCopyWith<$Res> {
-  factory $CustomerNewStateCopyWith(
-          CustomerNewState value, $Res Function(CustomerNewState) then) =
-      _$CustomerNewStateCopyWithImpl<$Res>;
+abstract class $CustomerLocalListStateCopyWith<$Res> {
+  factory $CustomerLocalListStateCopyWith(CustomerLocalListState value,
+          $Res Function(CustomerLocalListState) then) =
+      _$CustomerLocalListStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CustomerNewStateCopyWithImpl<$Res>
-    implements $CustomerNewStateCopyWith<$Res> {
-  _$CustomerNewStateCopyWithImpl(this._value, this._then);
+class _$CustomerLocalListStateCopyWithImpl<$Res>
+    implements $CustomerLocalListStateCopyWith<$Res> {
+  _$CustomerLocalListStateCopyWithImpl(this._value, this._then);
 
-  final CustomerNewState _value;
+  final CustomerLocalListState _value;
   // ignore: unused_field
-  final $Res Function(CustomerNewState) _then;
+  final $Res Function(CustomerLocalListState) _then;
 }
 
 /// @nodoc
@@ -1298,7 +1235,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CustomerNewStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$CustomerLocalListStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -1309,18 +1247,12 @@ class __$InitialCopyWithImpl<$Res> extends _$CustomerNewStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
+class _$_Initial implements _Initial {
   const _$_Initial();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CustomerNewState.initial'));
+  String toString() {
+    return 'CustomerLocalListState.initial()';
   }
 
   @override
@@ -1388,7 +1320,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   }
 }
 
-abstract class _Initial implements CustomerNewState {
+abstract class _Initial implements CustomerLocalListState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -1401,7 +1333,7 @@ abstract class _$ShowProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$ShowProgressCopyWithImpl<$Res>
-    extends _$CustomerNewStateCopyWithImpl<$Res>
+    extends _$CustomerLocalListStateCopyWithImpl<$Res>
     implements _$ShowProgressCopyWith<$Res> {
   __$ShowProgressCopyWithImpl(
       _ShowProgress _value, $Res Function(_ShowProgress) _then)
@@ -1413,19 +1345,12 @@ class __$ShowProgressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowProgress with DiagnosticableTreeMixin implements _ShowProgress {
+class _$_ShowProgress implements _ShowProgress {
   const _$_ShowProgress();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewState.showProgress()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerNewState.showProgress'));
+  String toString() {
+    return 'CustomerLocalListState.showProgress()';
   }
 
   @override
@@ -1493,7 +1418,7 @@ class _$_ShowProgress with DiagnosticableTreeMixin implements _ShowProgress {
   }
 }
 
-abstract class _ShowProgress implements CustomerNewState {
+abstract class _ShowProgress implements CustomerLocalListState {
   const factory _ShowProgress() = _$_ShowProgress;
 }
 
@@ -1509,7 +1434,8 @@ abstract class _$DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$CustomerNewStateCopyWithImpl<$Res>
+class __$DataCopyWithImpl<$Res>
+    extends _$CustomerLocalListStateCopyWithImpl<$Res>
     implements _$DataCopyWith<$Res> {
   __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
       : super(_value, (v) => _then(v as _Data));
@@ -1544,7 +1470,7 @@ class __$DataCopyWithImpl<$Res> extends _$CustomerNewStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Data with DiagnosticableTreeMixin implements _Data {
+class _$_Data implements _Data {
   const _$_Data(this.locales, this.hasReachedMax, this.tipoFiltro,
       [this.page = 0]);
 
@@ -1559,19 +1485,8 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   final dynamic page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewState.data(locales: $locales, hasReachedMax: $hasReachedMax, tipoFiltro: $tipoFiltro, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerNewState.data'))
-      ..add(DiagnosticsProperty('locales', locales))
-      ..add(DiagnosticsProperty('hasReachedMax', hasReachedMax))
-      ..add(DiagnosticsProperty('tipoFiltro', tipoFiltro))
-      ..add(DiagnosticsProperty('page', page));
+  String toString() {
+    return 'CustomerLocalListState.data(locales: $locales, hasReachedMax: $hasReachedMax, tipoFiltro: $tipoFiltro, page: $page)';
   }
 
   @override
@@ -1661,7 +1576,7 @@ class _$_Data with DiagnosticableTreeMixin implements _Data {
   }
 }
 
-abstract class _Data implements CustomerNewState {
+abstract class _Data implements CustomerLocalListState {
   const factory _Data(
       List<CustomerLocal> locales, bool hasReachedMax, String tipoFiltro,
       [dynamic page]) = _$_Data;
@@ -1681,7 +1596,8 @@ abstract class _$FailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$CustomerNewStateCopyWithImpl<$Res>
+class __$FailureCopyWithImpl<$Res>
+    extends _$CustomerLocalListStateCopyWithImpl<$Res>
     implements _$FailureCopyWith<$Res> {
   __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
       : super(_value, (v) => _then(v as _Failure));
@@ -1692,18 +1608,12 @@ class __$FailureCopyWithImpl<$Res> extends _$CustomerNewStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure with DiagnosticableTreeMixin implements _Failure {
+class _$_Failure implements _Failure {
   const _$_Failure();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerNewState.failure()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CustomerNewState.failure'));
+  String toString() {
+    return 'CustomerLocalListState.failure()';
   }
 
   @override
@@ -1771,6 +1681,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   }
 }
 
-abstract class _Failure implements CustomerNewState {
+abstract class _Failure implements CustomerLocalListState {
   const factory _Failure() = _$_Failure;
 }

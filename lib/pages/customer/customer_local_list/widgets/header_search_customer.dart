@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socios_app/bloc/bloc/customer_new_bloc.dart';
-import 'package:socios_app/bloc/cubit/customer_key_cubit.dart';
-import 'package:socios_app/bloc/cubit/customerfilter_cubit.dart';
+
+
 import 'package:socios_app/models/response_model.dart';
+import 'package:socios_app/pages/customer/customer_local_list/bloc/customer_local_list_bloc.dart';
+import 'package:socios_app/pages/customer/customer_local_list/cubit/customer_key_cubit.dart';
+import 'package:socios_app/pages/customer/customer_local_list/cubit/customerfilter_cubit.dart';
 import 'package:socios_app/utils/colors.dart';
 import 'package:socios_app/utils/consts.dart';
 import 'package:socios_app/utils/dimens.dart';
@@ -87,8 +89,8 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
                             onChanged: (text) {
                               context.read<CustomerKeyCubit>().emitirKeys(text);
 
-                              BlocProvider.of<CustomerNewBloc>(context).add(
-                                  CustomerNewEvent.callListCustomerSearchKey(
+                              BlocProvider.of<CustomerLocalListBloc>(context).add(
+                                  CustomerLocalListEvent.callListCustomerSearchKey(
                                       "DIAZPJOS",
                                       clienteFilterSelected?.codigo,
                                       txtControlerSearch.text,
@@ -119,8 +121,8 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
                               // highlightColor: Colors.pink,
                               onPressed: () {
                                 txtControlerSearch.text="";
-                                 BlocProvider.of<CustomerNewBloc>(context).add(
-                                CustomerNewEvent.callListCustomerSearchButton(
+                                 BlocProvider.of<CustomerLocalListBloc>(context).add(
+                                CustomerLocalListEvent.callListCustomerSearchButton(
                                     "DIAZPJOS",
                                     clienteFilterSelected?.codigo,
                                     txtControlerSearch.text,
@@ -135,8 +137,8 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
                           ),
                           // highlightColor: Colors.pink,
                           onPressed: () {
-                            BlocProvider.of<CustomerNewBloc>(context).add(
-                                CustomerNewEvent.callListCustomerSearchButton(
+                            BlocProvider.of<CustomerLocalListBloc>(context).add(
+                                CustomerLocalListEvent.callListCustomerSearchButton(
                                     "DIAZPJOS",
                                     clienteFilterSelected?.codigo,
                                     txtControlerSearch.text,

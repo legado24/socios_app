@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:socios_app/bloc/bloc/customer_new_bloc.dart';
-import 'package:socios_app/bloc/bloc/home_new_bloc.dart';
 
 import 'package:socios_app/models/response_model.dart';
+import 'package:socios_app/pages/customer/customer_local_list/bloc/customer_local_list_bloc.dart';
+import 'package:socios_app/pages/home/bloc/daily_info_bloc.dart';
 import 'package:socios_app/utils/colors.dart';
 import 'package:socios_app/utils/consts.dart';
 import 'package:socios_app/utils/dimens.dart';
@@ -30,9 +29,9 @@ class _CustomerPageState extends State<CustomerPage> {
   void initState() {
     super.initState();
     clienteFilterSelected = _filters[0];
-    context.read<HomeNewBloc>()..add(HomeNewEvent.reInit());
-    context.read<CustomerNewBloc>() 
-      ..add(CustomerNewEvent.callListCustomer("DIAZPJOS",
+    context.read<DailyInfoBloc>()..add(DailyInfoEvent.reInit());
+    context.read<CustomerLocalListBloc>() 
+      ..add(CustomerLocalListEvent.callListCustomer("DIAZPJOS",
           clienteFilterSelected.codigo, txtControlerSearch.text, 1));
   }
 
@@ -94,8 +93,8 @@ class _CustomerPageState extends State<CustomerPage> {
                                                       .seTextHint =
                                                   "Ingrese dirección"
                                               : clienteFilterSelected.textHint;
-                                          context.read<CustomerNewBloc>()
-                                            ..add(CustomerNewEvent
+                                          context.read<CustomerLocalListBloc>()
+                                            ..add(CustomerLocalListEvent
                                                 .callListCustomerFilterSelected(
                                                     "DIAZPJOS",
                                                     value!.codigo,
@@ -109,8 +108,8 @@ class _CustomerPageState extends State<CustomerPage> {
                                 padding: EdgeInsets.symmetric(horizontal: 10),
                                 child: CupertinoTextField(
                                   onChanged: (text) => {
-                                    context.read<CustomerNewBloc>()
-                                      ..add(CustomerNewEvent
+                                    context.read<CustomerLocalListBloc>()
+                                      ..add(CustomerLocalListEvent
                                           .callListCustomerSearchKey(
                                               "DIAZPJOS",
                                               clienteFilterSelected.codigo,
@@ -136,8 +135,8 @@ class _CustomerPageState extends State<CustomerPage> {
                                 ),
                                // highlightColor: Colors.pink,
                                 onPressed: () {
-                                  context.read<CustomerNewBloc>()
-                                    ..add(CustomerNewEvent
+                                  context.read<CustomerLocalListBloc>()
+                                    ..add(CustomerLocalListEvent
                                         .callListCustomerSearchButton(
                                             "DIAZPJOS",
                                             clienteFilterSelected.codigo,
@@ -178,8 +177,8 @@ class _CustomerPageState extends State<CustomerPage> {
   bool _handleScrollNotification(ScrollNotification notification) {
     if (notification is ScrollEndNotification &&
         _scrollController.position.extentAfter == 0) {
-      BlocProvider.of<CustomerNewBloc>(context).add(
-          CustomerNewEvent.callListCustomer(
+      BlocProvider.of<CustomerLocalListBloc>(context).add(
+          CustomerLocalListEvent.callListCustomer(
               "DIAZPJOS", "01", txtControlerSearch.text, false));
     }
 
@@ -187,10 +186,10 @@ class _CustomerPageState extends State<CustomerPage> {
   }
 
   getWidgetList() {
-    return BlocListener<CustomerNewBloc, CustomerNewState>(
+    return BlocListener<CustomerLocalListBloc, CustomerLocalListState>(
         listener: (_, state) {
       print("state changed  ${state} ");
-    }, child: BlocBuilder<CustomerNewBloc, CustomerNewState>(
+    }, child: BlocBuilder<CustomerLocalListBloc, CustomerLocalListState>(
             builder: (context, state) {
       return state.when(
           showProgress: () => Center(child: CircularProgressIndicator()),

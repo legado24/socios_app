@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socios_app/bloc/bloc/customer_new_bloc.dart';
-import 'package:socios_app/bloc/bloc/home_new_bloc.dart';
-import 'package:socios_app/bloc/home_bloc.dart';
-import 'package:socios_app/bloc/inicio_bloc.dart';
+
 import 'package:socios_app/models/response_model.dart';
+import 'package:socios_app/pages/home/bloc/daily_info_bloc.dart';
 import 'package:socios_app/utils/consts.dart';
 
 class BienvenidaHome extends StatefulWidget {
@@ -20,36 +18,25 @@ class BienvenidaHome extends StatefulWidget {
 }
 
 class _BienvenidaHomeState extends State<BienvenidaHome> {
-   //late InicioBloc _inicioBloc=InicioBloc();//ProviderInicio.of(context).inicioBloc;
   
-  //late HomeNewBloc _homeNewBloc=HomeNewBloc();
   @override
   void initState() {
-    context.read<CustomerNewBloc>()..add(CustomerNewEvent.reInit()); 
-    context.read<HomeNewBloc>()//..add(HomeNewEvent.reInit())
-    ..add(HomeNewEvent.callInfoDiaria("DIAZPJOS"));
+   // context.read<CustomerNewBloc>()..add(CustomerNewEvent.reInit()); 
+    context.read<DailyInfoBloc>()//..add(HomeNewEvent.reInit())
+    ..add(DailyInfoEvent.callInfoDiaria("DIAZPJOS"));
     super.initState();
-     
-     //_inicioBloc.addEvent.add(CallInfoDiaria());
- //context.read<HomeNewBloc>().add(HomeNewEvent.callInfoDiaria());
-
-    //_homeBloc = 
-   //context.read<HomeBloc>().add(HomeEvent.showProgress("DIAZPJOS"));
-   // _homeBloc = BlocProvider.of<HomeBloc>(context);///..add(HomeEvent.fetched("DIAZPJOS"));
+    
   }
   @override
   void dispose() {
    
    super.dispose();
-   // _homeBloc.close();
  
-    
-   
   }
 
 @override
   Widget build(BuildContext context) {
-    return  BlocBuilder<HomeNewBloc, HomeNewState>(
+    return  BlocBuilder<DailyInfoBloc, DailyInfoState>(
         builder: (context, state) {
           return state.maybeWhen(
             initial:()=> getProgress(""),
@@ -61,81 +48,7 @@ class _BienvenidaHomeState extends State<BienvenidaHome> {
              
   }
   
-  /* @override
-  Widget build(BuildContext context) {
-    return BlocListener<HomeNewBloc, HomeNewState>(      
-      listener: (_, state) {
-        print("state changed");
-      },
-      child: BlocBuilder<HomeNewBloc, HomeNewState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            initial:()=> getProgress(""),
-            showProgress: ()=> getProgress("cargando"), 
-            data: (info)=> getWidgetBienvenida(info, widget.size),
-            failure: ()=> Container(child: Text("Sin conexión")),
-            orElse: ()=>Container(child: Text("Sin estado"))
-            );}));
-             
-  } */
-
- /*  @override
-  Widget build(BuildContext context) {
-    return BlocListener<HomeBloc, HomeState>(
-    //  bloc:context.read<HomeBloc>() ..add(HomeEvent.clean()),
-      listener: (_, state) {
-        print("state changed");
-      },
-      child: BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) {
-          return state.maybeWhen( 
-            initial:()=> Container(),
-             
-             isLoading:() => Center(
-                  child: Container(
-                      margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                      height: widget.size.height * 0.36,
-                      child: Center(child: CircularProgressIndicator()))), 
-                      isLoaded:(state)=> getWidgetBienvenida(state), 
-                      failure:()=> Center(
-                  child: Container(
-                      height: widget.size.height * 0.36,
-                      child: Center(child: Text("NO HAY CONEXIÓN")))),
-                      orElse: ()=>Text("Nigun estado"));
-                     
-        },
-      ),
-    );
-  }
- */
-/*   @override
-  Widget build(BuildContext context) {
-    return ProviderInicio(
-        child:   StreamBuilder<InfoVentaDiariaResponse>(
-        stream: _inicioBloc.infoDiaria,
-        builder: (context, snapshotInfo) {
-          // return BodyHome(snapshotInfo.data);
-          return StreamBuilder<bool>(
-              stream: _inicioBloc.showLOading,
-              builder: (context, snapshotLoading) {
-                return getWidget(snapshotInfo, snapshotLoading);
-              });
-        },
-      ),
-    );
-  } */
-
-  /*  Widget getWidget(snapShotInfo, snapShotLoading) {
-    if (snapShotLoading.data == true) {
-      return Center(child: CircularProgressIndicator());
-    } else if (snapShotLoading.data == false) {
-      return getWidgetBienvenida(snapShotInfo.data,widget.size);
-    }
-    return Center(child: CircularProgressIndicator());
-  } */
-//}
+  
 
 Widget getProgress(String text){
 
@@ -176,13 +89,11 @@ Widget getProgress(String text){
             ),
             Flexible(
               child: Container(
-                // decoration:
-                //   BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+               
                 child: Row(children: [
                   Flexible(
                     child: Container(
-                      //decoration: BoxDecoration(
-                      //  border: Border.all(color: Colors.blueAccent)),
+                     
                       child: Text(
                         "Soy tu socio y estoy para ayudarte",
                         style: TextStyle(
@@ -193,8 +104,7 @@ Widget getProgress(String text){
                     ),
                   ),
                   Container(
-                    // decoration: BoxDecoration(
-                    //   border: Border.all(color: Colors.blueAccent)),
+                  
                     child: RichText(
                       text: TextSpan(
                         children: <TextSpan>[

@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:socios_app/bloc/bloc/home_new_bloc.dart';
-import 'package:socios_app/bloc/bloc/routes_bloc.dart';
+import 'package:socios_app/pages/home/bloc/daily_info_bloc.dart';
+import 'package:socios_app/pages/home/bloc/routes_bloc.dart';
+
+
 
 import 'package:socios_app/pages/home/widgets/bienvenida.dart';
 import 'package:socios_app/pages/home/widgets/menu_home.dart';
@@ -15,12 +17,12 @@ class BodyHome extends StatelessWidget {
 final BoxConstraints _constrains;
   @override
   Widget build(BuildContext context) {
-    //Size size = MediaQuery.of(context).size;
+     
 
     return  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          BlocBuilder<HomeNewBloc, HomeNewState>(
+          BlocBuilder<DailyInfoBloc, DailyInfoState>(
             builder: (context, state) {
               return state.maybeWhen(
                   showProgress: () => Text("cargando"),
@@ -28,8 +30,8 @@ final BoxConstraints _constrains;
                       height: 40,
                       child: Text("Adrian"),
                       onPressed: () => context
-                          .read<HomeNewBloc>()
-                          .add(HomeNewEvent.callInfoDiaria("DIAZPJOS"))));
+                          .read<DailyInfoBloc>()
+                          .add(DailyInfoEvent.callInfoDiaria("DIAZPJOS"))));
             },
           ),
           BienvenidaHome( constraints: _constrains,

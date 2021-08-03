@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socios_app/bloc/bloc/customer_new_bloc.dart';
+
 import 'package:socios_app/models/response_model.dart';
-import 'package:socios_app/pages/customer/widgets/header_search_customer.dart';
-import 'package:socios_app/pages/customer/widgets/item_menu_sheet.dart';
+import 'package:socios_app/pages/customer/customer_local_list/bloc/customer_local_list_bloc.dart';
+import 'package:socios_app/pages/customer/customer_local_list/widgets/header_search_customer.dart';
+import 'package:socios_app/pages/customer/customer_local_list/widgets/item_menu_sheet.dart';
+ 
 import 'package:socios_app/utils/consts.dart';
 import 'package:socios_app/utils/dimens.dart';
 import 'package:socios_app/widgets/appbar_socios.dart';
@@ -61,7 +63,7 @@ class ListCustomerLocalPage extends StatelessWidget {
   bool _handleScrollNotification(_, ScrollNotification notification) {
     if (notification is ScrollEndNotification &&
         _scrollController.position.extentAfter == 0) {
-      BlocProvider.of<CustomerNewBloc>(_).add(CustomerNewEvent.callListCustomer(
+      BlocProvider.of<CustomerLocalListBloc>(_).add(CustomerLocalListEvent.callListCustomer(
           "DIAZPJOS", "01", txtControlerSearch.text, false));
     }
 
@@ -69,12 +71,12 @@ class ListCustomerLocalPage extends StatelessWidget {
   }
 
   getWidgetList(_, BoxConstraints constraints) {
-    return BlocListener<CustomerNewBloc, CustomerNewState>(
+    return BlocListener<CustomerLocalListBloc, CustomerLocalListState>(
         listener: (_, state) {
           print("state changed  ${state} ");
         },
-        child: BlocBuilder<CustomerNewBloc, CustomerNewState>(
-            bloc: BlocProvider.of<CustomerNewBloc>(
+        child: BlocBuilder<CustomerLocalListBloc, CustomerLocalListState>(
+            bloc: BlocProvider.of<CustomerLocalListBloc>(
                 _), //..add(CustomerNewEvent.callListCustomer("DIAZPJOS", "01", "")),
             builder: (context, state) {
               return state.when(

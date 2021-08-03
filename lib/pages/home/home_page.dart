@@ -1,7 +1,6 @@
  
 import 'package:flutter/material.dart';
-import 'package:socios_app/bloc/bloc/home_new_bloc.dart';
- import 'package:socios_app/bloc/inicio_bloc.dart';
+
 import 'package:socios_app/pages/home/widgets/body.dart';
 import 'package:socios_app/widgets/appbar_socios.dart';
 

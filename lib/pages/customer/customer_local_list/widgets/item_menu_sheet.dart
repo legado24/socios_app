@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socios_app/models/response_model.dart';
-import 'package:socios_app/pages/customer/subpages/datos_customer.dart';
+import 'package:socios_app/pages/customer/customer_info/customer_info.dart';
 import 'package:socios_app/utils/dimens.dart';
 
 class ItemMenuSheet extends StatelessWidget {

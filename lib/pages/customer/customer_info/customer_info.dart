@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socios_app/bloc/bloc/customer_info_bloc.dart';
 import 'package:socios_app/models/response_model.dart';
-import 'package:socios_app/pages/customer/subpages/widgets/item_direccion.dart';
+import 'package:socios_app/pages/customer/customer_info/bloc/customer_info_bloc.dart';
+import 'package:socios_app/pages/customer/customer_info/widgets/item_direccion.dart';
 import 'package:socios_app/pages/home/widgets/title_home.dart';
 import 'package:socios_app/utils/dimens.dart';
 import 'package:socios_app/widgets/appbar_socios.dart';
