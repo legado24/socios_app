@@ -60,40 +60,12 @@ class MyApp extends StatelessWidget {
               BlocProvider(create: (_) => RoutesBloc(SociosRepository())),
             ], child: MainScreen()),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/DatosCustomerPage': (context) =>  BlocProvider(
+        '/DatosCustomerPage': (context) => BlocProvider(
               create: (context) => CustomerInfoBloc(SociosRepository()),
               child: DatosCustomerPage(),
             ),
         '/ActualizarDatosPage': (context) => const ActualizarDatosPage(),
       },
-
-      /*   home: MultiBlocProvider(providers: [
-
-        BlocProvider(
-          lazy: false,
-          create: (context) =>
-              CustomerKeyCubit(),
-        ),
-
-
-        BlocProvider(
-            create: (_) => HomeNewBloc(
-                SociosRepository())), //..add(HomeNewEvent.callInfoDiaria())),
-        BlocProvider(create: (_) => CustomerNewBloc(SociosRepository())),
-        BlocProvider(
-          lazy: false,
-          create: (context) =>
-              CustomerfilterCubit(context.read<CustomerNewBloc>()),
-        ),
-
-         BlocProvider(
-            create: (_) => ListPedidosBloc(
-                SociosRepository())),
-        
-             BlocProvider(
-            create: (_) => RoutesBloc(
-                SociosRepository())),
-      ], child: MainScreen()),*/
     );
   }
 }
