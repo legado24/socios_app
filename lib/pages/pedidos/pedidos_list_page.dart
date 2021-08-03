@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 import 'package:socios_app/pages/pedidos/bloc/pedidos_list_bloc.dart';
- 
+
 import 'package:socios_app/utils/colors.dart';
 import 'package:socios_app/utils/dimens.dart';
 import 'package:socios_app/widgets/appbar_socios.dart';
@@ -14,83 +14,80 @@ class PedidosListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     txtController.text = getCurrentDate();
-     final size =MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: SociosAppBar(title: "Pedidos"),
-      body:   SingleChildScrollView(
-            
-            child: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                        padding: EdgeInsets.all(defaultMaxPadding),
-                        child: Row(
-                          children: [
-                            Image(
-                                height: 20,
-                                width: 20,
-                                image: AssetImage(
-                                    "assets/images/calendar_blue.png")),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text("Fecha",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold)),
-                          ],
-                        )),
-                  ),
+        appBar: SociosAppBar(title: "Pedidos"),
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      padding: EdgeInsets.all(defaultMaxPadding),
+                      child: Row(
+                        children: [
+                          Image(
+                              height: 20,
+                              width: 20,
+                              image: AssetImage(
+                                  "assets/images/calendar_blue.png")),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("Fecha",
+                              style: TextStyle(
+                                  fontFamily: "Poppins",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold)),
+                        ],
+                      )),
+                ),
                 //  Expanded(flex: 1, child: SizedBox()),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-
-                     // padding: EdgeInsets.only(right: defaultMaxPadding),
-                      child: GestureDetector(
-                        onTap: () {
-                          showDatePicker(
-                                  context: context,
-                                  initialDate: txtController.text.isEmpty? DateTime.now():DateFormat("dd-MM-yyyy").parse(txtController.text),
-                                  firstDate:
-                                      DateTime(DateTime.now().year - 100),
-                                  lastDate: DateTime(DateTime.now().year + 1))
-                              .then((value) {
-                            txtController.text =
-                                '${value!.day.toString().padLeft(2, '0')}-${value.month.toString().padLeft(2, '0')}-${value.year.toString()}';
-                                context.read<PedidosListBloc>().add(PedidosListEvent.callListPedidos("DIAZPJOS",  txtController.text));
-                          });
-                        },
-                        child: TextField(
-                            decoration: InputDecoration(
-                             // suffixIconConstraints: constraint,
-                              suffixStyle: TextStyle(fontSize: 3),
-                              suffixIcon: Icon(Icons.arrow_drop_down),
-                              border: InputBorder.none,
-                            ),
-                            controller: txtController,
-                            style: TextStyle(
-                                fontFamily: "Poppins",
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                            enabled: false),
-                      ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    //padding: EdgeInsets.only(right: defaultMaxPadding),
+                    child: GestureDetector(
+                      onTap: () {
+                        showDatePicker(
+                                context: context,
+                                initialDate: txtController.text.isEmpty
+                                    ? DateTime.now()
+                                    : DateFormat("dd-MM-yyyy")
+                                        .parse(txtController.text),
+                                firstDate: DateTime(DateTime.now().year - 100),
+                                lastDate: DateTime(DateTime.now().year + 1))
+                            .then((value) {
+                          txtController.text =
+                              '${value!.day.toString().padLeft(2, '0')}-${value.month.toString().padLeft(2, '0')}-${value.year.toString()}';
+                          context.read<PedidosListBloc>().add(
+                              PedidosListEvent.callListPedidos(
+                                  "DIAZPJOS", txtController.text));
+                        });
+                      },
+                      child: TextField(
+                          decoration: InputDecoration(
+                            // suffixIconConstraints: constraint,
+                            suffixStyle: TextStyle(fontSize: 3),
+                            suffixIcon: Icon(Icons.arrow_drop_down),
+                            border: InputBorder.none,
+                          ),
+                          controller: txtController,
+                          style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                          enabled: false),
                     ),
                   ),
-                ],
-              ),
-              Container(
-                  height: size.height*0.90,
-                  child: getWidgetList(context))
-            ]),
-          )
-        
-      
-    );
+                ),
+              ],
+            ),
+            Container(height: size.height * 0.90, child: getWidgetList(context))
+          ]),
+        ));
   }
 
   getCurrentDate() {
@@ -105,7 +102,7 @@ class PedidosListPage extends StatelessWidget {
         child: BlocBuilder<PedidosListBloc, PedidosListState>(
             bloc: BlocProvider.of<PedidosListBloc>(_)
               ..add(PedidosListEvent.callListPedidos(
-                  "DIAZPJOS", txtController.text)),
+               "DIAZPJOS", txtController.text)),
             builder: (context, state) {
               return state.when(
                   showProgress: () =>
@@ -139,9 +136,10 @@ class PedidosListPage extends StatelessWidget {
                             }
 
                             return Padding(
-                              padding: const EdgeInsets.symmetric(horizontal:  defaultMaxPadding),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: defaultMaxPadding),
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                // crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     children: [
@@ -155,9 +153,9 @@ class PedidosListPage extends StatelessWidget {
                                                 width: 18,
                                                 image: AssetImage(
                                                     "assets/images/package_box.png")),
-                                            SizedBox(
+                                            /*  SizedBox(
                                               width: 6,
-                                            ),
+                                            ), */
                                             Expanded(
                                               child: Text(
                                                   "${pedidos[index].nroPedido}  ${pedidos[index].codCondicion}",
@@ -192,12 +190,12 @@ class PedidosListPage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  /* SizedBox(
                                     height: 15,
-                                  ),
+                                  ), */
                                   Container(
                                       child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    // mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
@@ -206,9 +204,9 @@ class PedidosListPage extends StatelessWidget {
                                           width: 18,
                                           image: AssetImage(
                                               "assets/images/id_card.png")),
-                                      SizedBox(
+                                      /*   SizedBox(
                                         width: 5,
-                                      ),
+                                      ), */
                                       Expanded(
                                         child: Text(
                                             pedidos[index]
@@ -219,9 +217,9 @@ class PedidosListPage extends StatelessWidget {
                                       ),
                                     ],
                                   )),
-                                  SizedBox(
+                              /*     SizedBox(
                                     height: 15,
-                                  ),
+                                  ), */
                                   Row(
                                     children: [
                                       Expanded(
@@ -243,12 +241,12 @@ class PedidosListPage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Expanded(
+                                     /*  Expanded(
                                         flex: 2,
                                         child: SizedBox(
                                           height: 4,
                                         ),
-                                      ),
+                                      ), */
                                       Expanded(
                                         flex: 2,
                                         child: Container(
@@ -274,10 +272,12 @@ class PedidosListPage extends StatelessWidget {
                                       )
                                     ],
                                   ),
-                                    SizedBox(height: 4,),
-                                    Divider(
-                                          color: Colors.grey[400],
-                                        )
+                                  SizedBox(
+                                    height: 4,
+                                  ),
+                                  Divider(
+                                    color: Colors.grey[400],
+                                  )
                                 ],
                               ),
                             );

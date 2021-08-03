@@ -24,31 +24,23 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: new ThemeData(
         brightness: Brightness.light,
         primaryColor: primaryColor,
-        /*  accentColor: hexToColor(0xFCA311),
-        splashColor: hexToColor(0x3BB273), */
       ),
       debugShowCheckedModeBanner: false,
       title: 'SOCIOS_APP',
       initialRoute: '/',
       routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => MultiBlocProvider(providers: [
               BlocProvider(
                 lazy: false,
                 create: (context) => CustomerKeyCubit(),
               ),
-
-              BlocProvider(
-                  create: (_) => DailyInfoBloc(
-                      SociosRepository())), //..add(HomeNewEvent.callInfoDiaria())),
+              BlocProvider(create: (_) => DailyInfoBloc(SociosRepository())),
               BlocProvider(
                   create: (_) => CustomerLocalListBloc(SociosRepository())),
               BlocProvider(
@@ -56,12 +48,9 @@ class MyApp extends StatelessWidget {
                 create: (context) =>
                     CustomerfilterCubit(context.read<CustomerLocalListBloc>()),
               ),
-
               BlocProvider(create: (_) => PedidosListBloc(SociosRepository())),
-
               BlocProvider(create: (_) => RoutesBloc(SociosRepository())),
             ], child: MainScreen()),
-        // When navigating to the "/second" route, build the SecondScreen widget.
         '/DatosCustomerPage': (context) => BlocProvider(
               create: (context) => CustomerInfoBloc(SociosRepository()),
               child: DatosCustomerPage(),

@@ -12,7 +12,6 @@ import 'package:socios_app/utils/consts.dart';
 
 import 'pages/home/bloc/routes_bloc.dart';
 import 'utils/dialogs.dart';
- 
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -24,8 +23,6 @@ class MainScreen extends StatefulWidget {
 class MainScreenState extends State<MainScreen> {
   late PageController _pageController;
   int _page = 0;
-  
-  
 
   @override
   Widget build(BuildContext context) {
@@ -37,17 +34,13 @@ class MainScreenState extends State<MainScreen> {
             controller: _pageController,
             onPageChanged: onPageChanged,
             children: <Widget>[
-           
               HomePage(),
-            ListCustomerLocalPage(),
-             PedidosListPage()
-            
-             
+              ListCustomerLocalPage(),
+              PedidosListPage()
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
             iconSize: 18,
-             
             showSelectedLabels: true,
             showUnselectedLabels: false,
             backgroundColor: Colors.black,
@@ -56,7 +49,7 @@ class MainScreenState extends State<MainScreen> {
             items: [
               BottomNavigationBarItem(
                   icon: Icon(Icons.home_filled), label: "Inicio"),
-               BottomNavigationBarItem(
+              BottomNavigationBarItem(
                   icon: Icon(Icons.group_sharp), label: "Clientes"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.list_alt), label: "Pedidos"),
@@ -64,7 +57,7 @@ class MainScreenState extends State<MainScreen> {
                   icon: Icon(Icons.store_outlined), label: "Articulos"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.monetization_on_outlined),
-                  label: "Cobranza"), 
+                  label: "Cobranza"),
             ],
             onTap: navigationTapped,
             currentIndex: _page,
@@ -73,14 +66,13 @@ class MainScreenState extends State<MainScreen> {
   }
 
   void navigationTapped(int page) {
-
     _pageController.jumpToPage(page);
   }
 
   @override
   void initState() {
     super.initState();
-     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     _pageController = PageController(initialPage: 0);
   }
 
@@ -95,9 +87,7 @@ class MainScreenState extends State<MainScreen> {
   }
 
   void onPageChanged(int page) {
-    
     setState(() {
-       
       this._page = page;
     });
   }

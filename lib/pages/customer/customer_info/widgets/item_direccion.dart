@@ -11,10 +11,10 @@ class ItemDireccion extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5.0),
                   child: Container(
                     // height: 100.0,
-                    padding: EdgeInsets.all(defaultMaxPadding),
+                  /*   padding: EdgeInsets.all(defaultMaxPadding),
 
                     margin: const EdgeInsets.all(
-                        defaultMinPadding), //Same as `blurRadius` i guess
+                        defaultMinPadding), */ //Same as `blurRadius` i guess
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -67,9 +67,9 @@ class ItemDireccion extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                       /*  SizedBox(
                           height: 10,
-                        ),
+                        ), */
                         Row(
                           children: [
                             Image(
@@ -90,9 +90,9 @@ class ItemDireccion extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                      /*   SizedBox(
                           height: 10,
-                        ),
+                        ), */
                         Row(
                           children: [
                             Image(

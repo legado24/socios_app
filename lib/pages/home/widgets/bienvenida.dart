@@ -18,52 +18,49 @@ class BienvenidaHome extends StatefulWidget {
 }
 
 class _BienvenidaHomeState extends State<BienvenidaHome> {
-  
   @override
   void initState() {
-   // context.read<CustomerNewBloc>()..add(CustomerNewEvent.reInit()); 
-    context.read<DailyInfoBloc>()//..add(HomeNewEvent.reInit())
-    ..add(DailyInfoEvent.callInfoDiaria("DIAZPJOS"));
+    // context.read<CustomerNewBloc>()..add(CustomerNewEvent.reInit());
+   /*  context.read<DailyInfoBloc>() //..add(HomeNewEvent.reInit())
+      ..add(DailyInfoEvent.callInfoDiaria("DIAZPJOS")); */
     super.initState();
-    
   }
+
   @override
   void dispose() {
-   
-   super.dispose();
- 
+    super.dispose();
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
-    return  BlocBuilder<DailyInfoBloc, DailyInfoState>(
+    return BlocBuilder<DailyInfoBloc, DailyInfoState>(
+      bloc:  context.read<DailyInfoBloc>() ..add(DailyInfoEvent.callInfoDiaria("DIAZPJOS")),
         builder: (context, state) {
-          return state.maybeWhen(
-            initial:()=> getProgress(""),
-            showProgress: ()=> getProgress("cargando"), 
-            data: (info)=> getWidgetBienvenida(info, widget.constraints.maxHeight),
-            failure: ()=> Container(child: Text("Sin conexión")),
-            orElse: ()=>Container(child: Text("Sin estado"))
-            );});
-             
+      return state.maybeWhen(
+          initial: () => getProgress(""),
+          showProgress: () => getProgress("cargando"),
+          data: (info) => getWidgetBienvenida(info),
+          failure: () => Container(child: Text("Sin conexión")),
+          orElse: () => Container(child: Text("Sin estado")));
+    });
   }
-  
-  
 
-Widget getProgress(String text){
-
-  return Container(
-                      margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                      height: widget.constraints.maxHeight * 0.36,
-                      child: Center(child: CircularProgressIndicator(semanticsLabel: text,)));
-}
-  Widget getWidgetBienvenida(InfoVentaDiariaResponse? state,size) {
+  Widget getProgress(String text) {
     return Container(
         margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
         padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        height: size * 0.36,
+        height: widget.constraints.maxHeight * 0.36,
+        child: Center(
+            child: CircularProgressIndicator(
+          semanticsLabel: text,
+        )));
+  }
+
+  Widget getWidgetBienvenida(InfoVentaDiariaResponse? state) {
+    return Container(
+        margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
+        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        height: widget.constraints.maxHeight * 0.36,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -72,46 +69,43 @@ Widget getProgress(String text){
               style: TextStyle(
                   color: Colors.grey[850],
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,fontFamily: "Poppins"),
-            ),
-            SizedBox(
-              height: 5,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"),
             ),
             Text(
               "${state?.nombres}",
               style: TextStyle(
                   color: Colors.blue[800],
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,fontFamily: "Poppins"),
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"),
             ),
-            SizedBox(
-              height: 10,
-            ),
+           
             Flexible(
               child: Container(
-               
                 child: Row(children: [
                   Flexible(
                     child: Container(
-                     
                       child: Text(
                         "Soy tu socio y estoy para ayudarte",
                         style: TextStyle(
                             color: Colors.blue[400],
                             fontSize: 16,
-                            fontWeight: FontWeight.bold,fontFamily: "Poppins"),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Poppins"),
                       ),
                     ),
                   ),
                   Container(
-                  
                     child: RichText(
                       text: TextSpan(
                         children: <TextSpan>[
                           TextSpan(
                             text: '😁', // emoji characters
-                            style:
-                                TextStyle(fontFamily: 'EmojiOne', fontSize: 15,),
+                            style: TextStyle(
+                              fontFamily: 'EmojiOne',
+                              fontSize: 15,
+                            ),
                           ),
                         ],
                       ),
@@ -120,9 +114,7 @@ Widget getProgress(String text){
                 ]),
               ),
             ),
-            SizedBox(
-              height: 12,
-            ),
+           
             Text(
               "🎉Vamos  ${state?.diasAvance}/${state?.diasTotal} días de ventas.",
               style: TextStyle(
@@ -131,9 +123,7 @@ Widget getProgress(String text){
                   fontFamily: "Poppins",
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(
-              height: 12,
-            ),
+            
             Text(
               "🎉Tu necesidad diaria de ventas es S/.${state?.necesidadDiaria}",
               style: TextStyle(
@@ -142,9 +132,7 @@ Widget getProgress(String text){
                   fontFamily: "Poppins",
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(
-              height: 12,
-            ),
+             
             Text(
               "🎉Vamos vendiendo  S/.${state?.avanceVentas}",
               style: TextStyle(
@@ -153,10 +141,8 @@ Widget getProgress(String text){
                   fontFamily: "Poppins",
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(
-              height: 20,
-            ),
+          
           ],
         ));
-  }}
-
+  }
+}

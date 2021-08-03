@@ -6,7 +6,7 @@ import 'package:socios_app/models/response_model.dart';
 import 'package:socios_app/pages/customer/customer_local_list/bloc/customer_local_list_bloc.dart';
 import 'package:socios_app/pages/customer/customer_local_list/widgets/header_search_customer.dart';
 import 'package:socios_app/pages/customer/customer_local_list/widgets/item_menu_sheet.dart';
- 
+
 import 'package:socios_app/utils/consts.dart';
 import 'package:socios_app/utils/dimens.dart';
 import 'package:socios_app/widgets/appbar_socios.dart';
@@ -39,7 +39,7 @@ class ListCustomerLocalPage extends StatelessWidget {
               ),
               Container(
                   padding: EdgeInsets.only(top: defaultMaxPadding),
-                  height: constraint.constrainHeight() * 0.9, //*0.9,
+                  height: constraint.maxHeight * 0.9, //*0.9,
                   width: double.infinity,
                   child: NotificationListener<ScrollNotification>(
                       onNotification: (scrollNotif) =>
@@ -63,8 +63,9 @@ class ListCustomerLocalPage extends StatelessWidget {
   bool _handleScrollNotification(_, ScrollNotification notification) {
     if (notification is ScrollEndNotification &&
         _scrollController.position.extentAfter == 0) {
-      BlocProvider.of<CustomerLocalListBloc>(_).add(CustomerLocalListEvent.callListCustomer(
-          "DIAZPJOS", "01", txtControlerSearch.text, false));
+      BlocProvider.of<CustomerLocalListBloc>(_).add(
+          CustomerLocalListEvent.callListCustomer(
+              "DIAZPJOS", "01", txtControlerSearch.text, false));
     }
 
     return false;
@@ -165,7 +166,7 @@ class ListCustomerLocalPage extends StatelessWidget {
         elevation: 4,
         builder: (BuildContext bc) {
           return Container(
-            height: MediaQuery.of(context).size.height * 0.35,
+            height: MediaQuery.of(context).size.height * 0.50,
             child: Column(
               children: [
                 AppBar(
@@ -189,21 +190,35 @@ class ListCustomerLocalPage extends StatelessWidget {
                 Container(
                   child: new Wrap(
                     children: <Widget>[
-                      
-                      ItemMenuSheet(title: "Visualizar datos del cliente",imageName: "infocustomer.png",pageCall: "DatosCustomerPage",codCliente: local.customer.getCode,),
-                      ItemMenuSheet(title: "Actualizar datos del cliente",imageName: "editcustomer.png",pageCall: "ActualizarDatosPage",codCliente: local.customer.getCode),
-                      ItemMenuSheet(title: "Información de compras del cliente",imageName: "comprascustomer.png",),
-                      ItemMenuSheet(title: "Pedidos",imageName: "pedidoscustomer.png",),
-                      ItemMenuSheet(title: "¿Por que no hizo pedido?",imageName: "icon_nopedido.png",),
-                       ],
+                      ItemMenuSheet(
+                        title: "Visualizar datos del cliente",
+                        imageName: "infocustomer.png",
+                        pageCall: "DatosCustomerPage",
+                        codCliente: local.customer.getCode,
+                      ),
+                      ItemMenuSheet(
+                          title: "Actualizar datos del cliente",
+                          imageName: "editcustomer.png",
+                          pageCall: "ActualizarDatosPage",
+                          codCliente: local.customer.getCode),
+                      ItemMenuSheet(
+                        title: "Información de compras del cliente",
+                        imageName: "comprascustomer.png",
+                      ),
+                      ItemMenuSheet(
+                        title: "Pedidos",
+                        imageName: "pedidoscustomer.png",
+                      ),
+                      ItemMenuSheet(
+                        title: "¿Por que no hizo pedido?",
+                        imageName: "icon_nopedido.png",
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           );
         });
-
-
-
   }
 }
