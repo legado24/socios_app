@@ -11,10 +11,12 @@ import 'package:socios_app/widgets/appbar_socios.dart';
 class PedidosListPage extends StatelessWidget {
   PedidosListPage({Key? key}) : super(key: key);
   var txtController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     txtController.text = getCurrentDate();
     final size = MediaQuery.of(context).size;
+    
     return Scaffold(
         appBar: SociosAppBar(title: "Pedidos"),
         body: SingleChildScrollView(
@@ -63,8 +65,7 @@ class PedidosListPage extends StatelessWidget {
                           txtController.text =
                               '${value!.day.toString().padLeft(2, '0')}-${value.month.toString().padLeft(2, '0')}-${value.year.toString()}';
                           context.read<PedidosListBloc>().add(
-                              PedidosListEvent.callListPedidos(
-                                  "DIAZPJOS", txtController.text));
+                              PedidosListEvent.callListPedidos( {"usuario": "DIAZPJOS","fecha":txtController.text}));
                         });
                       },
                       child: TextField(
@@ -95,14 +96,14 @@ class PedidosListPage extends StatelessWidget {
   }
 
   Widget getWidgetList(_) {
+    
     return BlocListener<PedidosListBloc, PedidosListState>(
         listener: (_, state) {
           print("state changed  ${state} ");
         },
         child: BlocBuilder<PedidosListBloc, PedidosListState>(
             bloc: BlocProvider.of<PedidosListBloc>(_)
-              ..add(PedidosListEvent.callListPedidos(
-               "DIAZPJOS", txtController.text)),
+              ..add(PedidosListEvent.callListPedidos( {"usuario": "DIAZPJOS","fecha":txtController.text})),
             builder: (context, state) {
               return state.when(
                   showProgress: () =>

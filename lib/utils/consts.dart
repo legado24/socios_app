@@ -17,7 +17,7 @@ const List<String> choices = <String>[
     SignOut
   ];
 
-  const int limitPagecustomerLocals=20;
+  const int limitPagecustomerLocals=10;
   const String fontFamily="Poppins";
   const double sizeTitle=15;
   const primaryColor=Color(0xFF2962ff);

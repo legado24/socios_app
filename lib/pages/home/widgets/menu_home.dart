@@ -10,9 +10,8 @@ class MenuHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          child: Row(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
             children: [
               ItemMenuHome(
                   title: "Tus Ventas",
@@ -51,7 +50,7 @@ class MenuHome extends StatelessWidget {
                   imagen: 'assets/img/money_menu.png',
                   color: Colors.blue)
             ],
-          ),
+          
         ));
   }
 }

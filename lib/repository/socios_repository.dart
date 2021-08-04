@@ -8,11 +8,14 @@ class SociosRepository {
   Api api = new Api();
   static SociosRepository _instance = SociosRepository._internal();
   SociosRepository._internal();
+    
 
   factory SociosRepository() {
     return _instance;
   }
 
+
+   
   Future<InfoVentaDiariaResponse>? infoDiaria(user) async {
     var infoVentaDiariaResponse = await api.getInfoVentas(user);
     
@@ -25,8 +28,8 @@ class SociosRepository {
     return response;
   }
 
-   Future<PedidoListResponse>  listPedidosByVendedor(user,fecha) async {
-    var response = await api.getPedidosByVendedor(user, fecha);
+   Future<PedidoListResponse>  listPedidosByVendedor(Map<String, String> parametros) async {
+    var response = await api.getPedidosByVendedor(parametros);
     return response;
   }
 

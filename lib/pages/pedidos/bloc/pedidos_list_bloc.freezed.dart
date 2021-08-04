@@ -24,10 +24,9 @@ class _$PedidosListEventTearOff {
     return const _Loading();
   }
 
-  _CallListPedidos callListPedidos(dynamic user, dynamic fecha) {
+  _CallListPedidos callListPedidos(Map<String, String> parametrosListPedidos) {
     return _CallListPedidos(
-      user,
-      fecha,
+      parametrosListPedidos,
     );
   }
 }
@@ -41,14 +40,16 @@ mixin _$PedidosListEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(Map<String, String> parametrosListPedidos)
+        callListPedidos,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(Map<String, String> parametrosListPedidos)?
+        callListPedidos,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +126,8 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(Map<String, String> parametrosListPedidos)
+        callListPedidos,
   }) {
     return started();
   }
@@ -135,7 +137,8 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(Map<String, String> parametrosListPedidos)?
+        callListPedidos,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -212,7 +215,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(Map<String, String> parametrosListPedidos)
+        callListPedidos,
   }) {
     return loading();
   }
@@ -222,7 +226,8 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(Map<String, String> parametrosListPedidos)?
+        callListPedidos,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -265,7 +270,7 @@ abstract class _$CallListPedidosCopyWith<$Res> {
   factory _$CallListPedidosCopyWith(
           _CallListPedidos value, $Res Function(_CallListPedidos) then) =
       __$CallListPedidosCopyWithImpl<$Res>;
-  $Res call({dynamic user, dynamic fecha});
+  $Res call({Map<String, String> parametrosListPedidos});
 }
 
 /// @nodoc
@@ -281,12 +286,13 @@ class __$CallListPedidosCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? user = freezed,
-    Object? fecha = freezed,
+    Object? parametrosListPedidos = freezed,
   }) {
     return _then(_CallListPedidos(
-      user == freezed ? _value.user : user,
-      fecha == freezed ? _value.fecha : fecha,
+      parametrosListPedidos == freezed
+          ? _value.parametrosListPedidos
+          : parametrosListPedidos // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -294,33 +300,29 @@ class __$CallListPedidosCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CallListPedidos implements _CallListPedidos {
-  const _$_CallListPedidos(this.user, this.fecha);
+  const _$_CallListPedidos(this.parametrosListPedidos);
 
   @override
-  final dynamic user;
-  @override
-  final dynamic fecha;
+  final Map<String, String> parametrosListPedidos;
 
   @override
   String toString() {
-    return 'PedidosListEvent.callListPedidos(user: $user, fecha: $fecha)';
+    return 'PedidosListEvent.callListPedidos(parametrosListPedidos: $parametrosListPedidos)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CallListPedidos &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.fecha, fecha) ||
-                const DeepCollectionEquality().equals(other.fecha, fecha)));
+            (identical(other.parametrosListPedidos, parametrosListPedidos) ||
+                const DeepCollectionEquality().equals(
+                    other.parametrosListPedidos, parametrosListPedidos)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(fecha);
+      const DeepCollectionEquality().hash(parametrosListPedidos);
 
   @JsonKey(ignore: true)
   @override
@@ -332,9 +334,10 @@ class _$_CallListPedidos implements _CallListPedidos {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loading,
-    required TResult Function(dynamic user, dynamic fecha) callListPedidos,
+    required TResult Function(Map<String, String> parametrosListPedidos)
+        callListPedidos,
   }) {
-    return callListPedidos(user, fecha);
+    return callListPedidos(parametrosListPedidos);
   }
 
   @override
@@ -342,11 +345,12 @@ class _$_CallListPedidos implements _CallListPedidos {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loading,
-    TResult Function(dynamic user, dynamic fecha)? callListPedidos,
+    TResult Function(Map<String, String> parametrosListPedidos)?
+        callListPedidos,
     required TResult orElse(),
   }) {
     if (callListPedidos != null) {
-      return callListPedidos(user, fecha);
+      return callListPedidos(parametrosListPedidos);
     }
     return orElse();
   }
@@ -377,11 +381,11 @@ class _$_CallListPedidos implements _CallListPedidos {
 }
 
 abstract class _CallListPedidos implements PedidosListEvent {
-  const factory _CallListPedidos(dynamic user, dynamic fecha) =
+  const factory _CallListPedidos(Map<String, String> parametrosListPedidos) =
       _$_CallListPedidos;
 
-  dynamic get user => throw _privateConstructorUsedError;
-  dynamic get fecha => throw _privateConstructorUsedError;
+  Map<String, String> get parametrosListPedidos =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$CallListPedidosCopyWith<_CallListPedidos> get copyWith =>
       throw _privateConstructorUsedError;

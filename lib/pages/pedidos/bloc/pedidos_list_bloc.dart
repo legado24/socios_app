@@ -33,11 +33,11 @@ class PedidosListBloc extends Bloc<PedidosListEvent, PedidosListState> {
   }
 
 
-   Stream<PedidosListState> callListPedidos(user, fecha) async* {
+   Stream<PedidosListState> callListPedidos(Map<String, String> parametros) async* {
     try {
       yield PedidosListState.showProgress();
       final pedidosListResponse =
-          await _sociosRepository.listPedidosByVendedor(user, fecha) ;
+          await _sociosRepository.listPedidosByVendedor(parametros) ;
       yield PedidosListState.data(pedidosListResponse.getPedidos);
     } catch (_) {
       yield PedidosListState.failure();

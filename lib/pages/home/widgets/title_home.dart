@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socios_app/utils/consts.dart';
+import 'package:socios_app/utils/dimens.dart';
 
 class TitleHome extends StatelessWidget {
   const TitleHome({
@@ -11,11 +12,11 @@ class TitleHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      padding: const EdgeInsets.all(defaultMinPadding),
       child: Text(
         title,
         style: TextStyle(
-            color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            color: Colors.black, fontSize: 13, fontFamily: fontFamily, fontWeight: FontWeight.w600),
       ),
     );
   }

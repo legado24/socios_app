@@ -6,6 +6,7 @@ import 'package:socios_app/pages/home/bloc/routes_bloc.dart';
 import 'package:socios_app/pages/home/widgets/bienvenida.dart';
 import 'package:socios_app/pages/home/widgets/menu_home.dart';
 import 'package:socios_app/pages/home/widgets/title_home.dart';
+import 'package:socios_app/utils/dimens.dart';
 
 import 'package:socios_app/widgets/appbar_socios.dart';
 
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage>
           return SingleChildScrollView(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+           // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
          /*      BlocBuilder<DailyInfoBloc, DailyInfoState>(
                 builder: (context, state) {
@@ -51,16 +53,33 @@ class _HomePageState extends State<HomePage>
               BienvenidaHome(
                 constraints: constraint,
               ),
-              TitleHome(title: "Seguimiento diario"),
-              MenuHome(),
-              TitleHome(title: "MIs Rutas"),
-              Image(
-                  height: 100,
-                  width: 550,
-                  image: AssetImage("assets/images/ruta_imagen.png")),
-              Container(
-                height: constraint.maxHeight * 0.3,
-                child: getWidgetListRoute(context),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: defaultMaxPadding),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TitleHome(title: "Seguimiento diario"),
+                    MenuHome(),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: defaultMaxPadding,right: defaultMaxPadding,top: defaultMaxPadding),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TitleHome(title: "MIs Rutas"),
+                    Image(
+                        height: 100,
+                        width: 550,
+                        image: AssetImage("assets/images/ruta_imagen.png")),
+                    Container(
+                      padding: EdgeInsets.all(defaultMaxPadding),
+                      height: constraint.maxHeight * 0.3,
+                      child: getWidgetListRoute(context),
+                    ),
+                  ],
+                ),
               )
             ],
           ));

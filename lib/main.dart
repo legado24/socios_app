@@ -17,7 +17,7 @@ import 'pages/home/bloc/routes_bloc.dart';
 import 'socios_bloc_observer.dart';
 
 void main() {
-  Bloc.observer = SimpleBlocObserver();
+ // Bloc.observer = SimpleBlocObserver();
   runApp(
     MyApp(),
   );

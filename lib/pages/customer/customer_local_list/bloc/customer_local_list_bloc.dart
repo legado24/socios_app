@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -25,7 +26,8 @@ class CustomerLocalListBloc extends Bloc<CustomerLocalListEvent, CustomerLocalLi
   @override
   Stream<CustomerLocalListState> mapEventToState(
     CustomerLocalListEvent event,
-  ) async* {
+  ) async* { 
+    
     yield* event.when(
         callListCustomer: (user, tipoFiltro, filtro, page) =>
             callData(user, tipoFiltro, filtro, page),
