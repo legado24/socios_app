@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import 'package:socios_app/models/response_model.dart';
 import 'package:socios_app/pages/customer/customer_local_list/bloc/customer_local_list_bloc.dart';
 import 'package:socios_app/pages/customer/customer_local_list/cubit/customer_key_cubit.dart';
@@ -43,22 +42,24 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
         clienteFilterSelected =
             state.when(initial: () => filters[0], filter: (value) => value);
         return Container(
+          width: double.infinity,
+          //color: Colors.red,
+          padding: EdgeInsets.symmetric(horizontal: defaultMaxPadding),
           height: 40,
-          margin: EdgeInsets.symmetric(
-              horizontal: defaultMaxPadding, vertical: defaultMinPadding),
+
           child: Row(
             children: [
               Expanded(
                 child: Container(
-                  width: double.infinity,
                   decoration: BoxDecoration(
-                      color: fondoInput,
+                      color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   height: 40,
                   child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(defaultMaxPadding),
                         child: DropdownButton<ClienteFilter>(
                             value: clienteFilterSelected,
                             iconSize: 15,
@@ -82,68 +83,121 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
                             }),
                       ),
                       Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: CupertinoTextField(
-                            autofocus: false,
-                            onChanged: (text) {
-                              context.read<CustomerKeyCubit>().emitirKeys(text);
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                      flex: 4,
+                                      child: Container(
+                                     //   color: Colors.green,
+                                        child: CupertinoTextField(
+                                          autofocus: false,
+                                          onChanged: (text) {
+                                            context
+                                                .read<CustomerKeyCubit>()
+                                                .emitirKeys(text);
 
-                              BlocProvider.of<CustomerLocalListBloc>(context).add(
-                                  CustomerLocalListEvent.callListCustomerSearchKey(
-                                      "DIAZPJOS",
-                                      clienteFilterSelected?.codigo,
-                                      txtControlerSearch.text,
-                                      1));
-                            },
-                            style:
-                                TextStyle(fontSize: 14, fontFamily: fontFamily),
-                            controller: txtControlerSearch,
-                            decoration: BoxDecoration(color: fondoInput),
-                            placeholder: clienteFilterSelected?.codigo == "01"
-                                ? "Ingrese nombre"
-                                : "Ingrese dirección",
-                            placeholderStyle: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
-                              fontFamily: "Poppins",
+                                            BlocProvider.of<
+                                                        CustomerLocalListBloc>(
+                                                    context)
+                                                .add(CustomerLocalListEvent
+                                                    .callListCustomerSearchKey(
+                                                        "DIAZPJOS",
+                                                        clienteFilterSelected
+                                                            ?.codigo,
+                                                        txtControlerSearch.text,
+                                                        1));
+                                          },
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontFamily: fontFamily),
+                                          controller: txtControlerSearch,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white),
+                                          placeholder:
+                                              clienteFilterSelected?.codigo ==
+                                                      "01"
+                                                  ? "Ingrese nombre"
+                                                  : "Ingrese dirección",
+                                          placeholderStyle: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.grey[400],
+                                            fontFamily: fontFamily,
+                                          ),
+                                        ),
+                                      )),
+                                  Expanded(
+                                      child: Container(
+                                   // color: Colors.yellow,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                          child: BlocBuilder<CustomerKeyCubit, CustomerKeyState>(
+                              builder: (context, state) {
+                                return state.when(
+                                    initial: () => Container(),
+                                    emiteKeys: (key) => key.isEmpty
+                                        ? Container()
+                                        : IconButton(
+                                            alignment: Alignment.centerRight,
+                                            padding: EdgeInsets.all(0),
+                                            icon: Icon(
+                                              Icons.close,
+                                              size: 20,
+                                            ),
+                                            onPressed: () {
+                                              txtControlerSearch.text = "";
+                                              BlocProvider.of<
+                                                          CustomerLocalListBloc>(
+                                                      context)
+                                                  .add(CustomerLocalListEvent
+                                                      .callListCustomerSearchButton(
+                                                          "DIAZPJOS",
+                                                          clienteFilterSelected
+                                                              ?.codigo,
+                                                          txtControlerSearch
+                                                              .text,
+                                                          1));
+                                            }));
+                              },
                             ),
-                          ),
+                                        ),
+                                        Expanded(
+                                          child: IconButton(
+                                              alignment: Alignment.centerLeft,
+                                              padding: EdgeInsets.all(0),
+                                              icon: Icon(
+                                                Icons.search,
+                                                size: 20,
+                                              ),
+                                              // highlightColor: Colors.pink,
+                                              onPressed: () {
+                                                BlocProvider.of<
+                                                            CustomerLocalListBloc>(
+                                                        context)
+                                                    .add(CustomerLocalListEvent
+                                                        .callListCustomerSearchButton(
+                                                            "DIAZPJOS",
+                                                            clienteFilterSelected
+                                                                ?.codigo,
+                                                            txtControlerSearch
+                                                                .text,
+                                                            1));
+                                              }),
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      BlocBuilder<CustomerKeyCubit, CustomerKeyState>(
-                        builder: (context, state) {
-                          return state.when(initial: ()=>Container(), emiteKeys: (key)=>key.isEmpty?Container():  IconButton(
-                              icon: Icon(
-                                Icons.close,
-                                size: 20,
-                              ),
-                              // highlightColor: Colors.pink,
-                              onPressed: () {
-                                txtControlerSearch.text="";
-                                 BlocProvider.of<CustomerLocalListBloc>(context).add(
-                                CustomerLocalListEvent.callListCustomerSearchButton(
-                                    "DIAZPJOS",
-                                    clienteFilterSelected?.codigo,
-                                    txtControlerSearch.text,
-                                    1));
-                              }));
-                        },
-                      ),
-                      IconButton(
-                          icon: Icon(
-                            Icons.search,
-                            size: 20,
-                          ),
-                          // highlightColor: Colors.pink,
-                          onPressed: () {
-                            BlocProvider.of<CustomerLocalListBloc>(context).add(
-                                CustomerLocalListEvent.callListCustomerSearchButton(
-                                    "DIAZPJOS",
-                                    clienteFilterSelected?.codigo,
-                                    txtControlerSearch.text,
-                                    1));
-                          })
                     ],
                   ),
                 ),

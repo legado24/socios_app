@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TitleHome(title: "MIs Rutas"),
+                    TitleHome(title: "Mis Rutas"),
                     Image(
                         height: 100,
                         width: 550,

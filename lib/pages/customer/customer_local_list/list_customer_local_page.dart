@@ -24,14 +24,14 @@ class ListCustomerLocalPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: SociosAppBar(title: "Clientes"),
       body: LayoutBuilder(
-        builder: (_, constraint) {
+        builder: (_,BoxConstraints constraint) {
           return SingleChildScrollView(
             child: Column(children: [
               Container(
-                height: 40,
-                margin: EdgeInsets.symmetric(
-                    horizontal: defaultMaxPadding, vertical: defaultMinPadding),
-                child: Row(
+               
+                height: MediaQuery.of(context).size.height*0.1, 
+                child: Row( 
+                  
                   children: [
                     Expanded(child: HeaderSearchCustomer()),
                   ],
