@@ -62,7 +62,7 @@ class _BienvenidaHomeState extends State<BienvenidaHome> {
        
        // margin: EdgeInsets.symmetric(vertical: defaultMaxPadding),
        padding: EdgeInsets.only(left: defaultMaxPadding,right: defaultMaxPadding,top: defaultMaxPadding),
-        height: widget.constraints.maxHeight * 0.42,
+        height:MediaQuery.of(context).size.height * 0.42,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

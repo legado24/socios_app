@@ -11,6 +11,7 @@ import 'package:socios_app/utils/consts.dart';
 import 'package:socios_app/utils/dimens.dart';
 
 class HeaderSearchCustomer extends StatefulWidget {
+  
   HeaderSearchCustomer({Key? key}) : super(key: key);
 
   @override
@@ -19,7 +20,7 @@ class HeaderSearchCustomer extends StatefulWidget {
 
 class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
   final txtControlerSearch = TextEditingController();
-
+ String lastInputValue="";
   List<ClienteFilter> filters = [
     ClienteFilter("01", "assets/images/ic_cliente.png"),
     ClienteFilter("02", "assets/images/home_house.png"),
@@ -91,24 +92,34 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
                                   Expanded(
                                       flex: 4,
                                       child: Container(
-                                     //   color: Colors.green,
+                                        //   color: Colors.green,
                                         child: CupertinoTextField(
                                           autofocus: false,
                                           onChanged: (text) {
-                                            context
-                                                .read<CustomerKeyCubit>()
-                                                .emitirKeys(text);
+                                            if (!text.trim().isEmpty) {
+                                              if (lastInputValue != text) {
+                                                  lastInputValue = text;
+                                                  
+                                              context
+                                                  .read<CustomerKeyCubit>()
+                                                  .emitirKeys(text);
 
-                                            BlocProvider.of<
-                                                        CustomerLocalListBloc>(
-                                                    context)
-                                                .add(CustomerLocalListEvent
-                                                    .callListCustomerSearchKey(
-                                                        "DIAZPJOS",
-                                                        clienteFilterSelected
-                                                            ?.codigo,
-                                                        txtControlerSearch.text,
-                                                        1));
+                                              BlocProvider.of<
+                                                          CustomerLocalListBloc>(
+                                                      context)
+                                                  .add(CustomerLocalListEvent
+                                                      .callListCustomerSearchKey(
+                                                          "DIAZPJOS",
+                                                          clienteFilterSelected
+                                                              ?.codigo,
+                                                          txtControlerSearch
+                                                              .text,
+                                                          1));
+                                              }
+
+
+
+                                            }
                                           },
                                           style: TextStyle(
                                               fontSize: 14,
@@ -130,41 +141,45 @@ class _HeaderSearchCustomerState extends State<HeaderSearchCustomer> {
                                       )),
                                   Expanded(
                                       child: Container(
-                                   // color: Colors.yellow,
+                                    // color: Colors.yellow,
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
                                         Expanded(
-                                          child: BlocBuilder<CustomerKeyCubit, CustomerKeyState>(
-                              builder: (context, state) {
-                                return state.when(
-                                    initial: () => Container(),
-                                    emiteKeys: (key) => key.isEmpty
-                                        ? Container()
-                                        : IconButton(
-                                            alignment: Alignment.centerRight,
-                                            padding: EdgeInsets.all(0),
-                                            icon: Icon(
-                                              Icons.close,
-                                              size: 20,
-                                            ),
-                                            onPressed: () {
-                                              txtControlerSearch.text = "";
-                                              BlocProvider.of<
-                                                          CustomerLocalListBloc>(
-                                                      context)
-                                                  .add(CustomerLocalListEvent
-                                                      .callListCustomerSearchButton(
-                                                          "DIAZPJOS",
-                                                          clienteFilterSelected
-                                                              ?.codigo,
-                                                          txtControlerSearch
-                                                              .text,
-                                                          1));
-                                            }));
-                              },
-                            ),
+                                          child: BlocBuilder<CustomerKeyCubit,
+                                              CustomerKeyState>(
+                                            builder: (context, state) {
+                                              return state.when(
+                                                  initial: () => Container(),
+                                                  emiteKeys: (key) => key
+                                                          .isEmpty
+                                                      ? Container()
+                                                      : IconButton(
+                                                          alignment: Alignment
+                                                              .centerRight,
+                                                          padding:
+                                                              EdgeInsets.all(0),
+                                                          icon: Icon(
+                                                            Icons.close,
+                                                            size: 20,
+                                                          ),
+                                                          onPressed: () {
+                                                            txtControlerSearch
+                                                                .text = "";
+                                                            BlocProvider.of<
+                                                                        CustomerLocalListBloc>(
+                                                                    context)
+                                                                .add(CustomerLocalListEvent.callListCustomerSearchButton(
+                                                                    "DIAZPJOS",
+                                                                    clienteFilterSelected
+                                                                        ?.codigo,
+                                                                    txtControlerSearch
+                                                                        .text,
+                                                                    1));
+                                                          }));
+                                            },
+                                          ),
                                         ),
                                         Expanded(
                                           child: IconButton(
